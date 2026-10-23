@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#C75B6B" />
+<title>100 días contigo</title>
+<meta name="description" content="Cien ideas de actividades para parejas. Descubran una al azar y guarden el recuerdo en un PDF." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💞</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+:root{
+  --cream:#FFF7F1;
+  --paper:#FFFFFF;
+  --ink:#2C211B;
+  --muted:#8A7A70;
+  --rose:#C75B6B;
+  --rose-dark:#A94254;
+  --rose-soft:#F7E1E3;
+  --terra:#E0795C;
+  --gold:#EBB35B;
+  --sage:#7A9E7E;
+  --line:#EFE2D9;
+  --shadow:0 10px 30px rgba(90,50,40,.09);
+  --shadow-sm:0 4px 14px rgba(90,50,40,.07);
+  --radius:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:'Karla',system-ui,-apple-system,'Segoe UI',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:48px;
+}
+h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-weight:700;letter-spacing:-.015em;margin:0}
+p{margin:0}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+textarea{font-family:inherit}
+
+/* ---------- HERO ---------- */
+.hero{
+  background:linear-gradient(150deg,#C75B6B 0%,#D96C6C 48%,#E0795C 100%);
+  color:#fff;
+  padding:42px 20px 36px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 88% -20%, rgba(255,255,255,.28), transparent 55%),
+    radial-gradient(circle at 5% 120%, rgba(255,255,255,.14), transparent 50%);
+  pointer-events:none;
+}
+.hero-inner{max-width:980px;margin:0 auto;position:relative;z-index:1}
+.eyebrow{
+  font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+  opacity:.85;margin-bottom:10px;font-weight:700;
+}
+.hero h1{font-size:clamp(30px,6.5vw,46px);line-height:1.05;margin-bottom:10px}
+.hero .sub{font-size:clamp(14px,2.4vw,16.5px);opacity:.92;max-width:540px;line-height:1.5}
+.hero-tag{
+  display:inline-flex;flex-wrap:wrap;gap:8px;margin-top:18px;
+}
+.hero-tag span{
+  font-size:12px;font-weight:700;padding:6px 12px;border-radius:99px;
+  background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.25);
+}
+
+/* ---------- TABS ---------- */
+.tabs{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,247,241,.92);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+  display:flex;gap:4px;
+  padding:8px 12px;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{
+  flex:0 0 auto;
+  padding:10px 16px;border-radius:99px;
+  font-size:14px;font-weight:700;color:var(--muted);
+  transition:.18s;
+  white-space:nowrap;
+}
+.tabs button:hover{color:var(--rose);background:var(--rose-soft)}
+.tabs button.active{background:var(--rose);color:#fff;box-shadow:0 6px 16px rgba(199,91,107,.32)}
+
+/* ---------- LAYOUT ---------- */
+main{max-width:980px;margin:0 auto;padding:22px 16px 40px}
+.tab-panel{display:none;animation:fade .32s ease}
+.tab-panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ---------- NOTICE ---------- */
+.notice{
+  display:flex;gap:12px;align-items:flex-start;
+  background:#FCF1DC;border:1px solid #F0DDB6;color:#6B5320;
+  border-radius:16px;padding:14px 16px;margin-bottom:18px;
+  font-size:13.5px;line-height:1.55;
+}
+.notice .ico{font-size:20px;line-height:1;flex:0 0 auto}
+.notice b{color:#4A3A12}
+
+/* ---------- CARDS / BUTTONS ---------- */
+.card{
+  background:var(--paper);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-sm);
+  border:1px solid var(--line);
+}
+.surprise-wrap{margin-bottom:18px}
+.surprise-btn{
+  width:100%;padding:20px 22px;font-size:16.5px;border-radius:16px;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+}
+.btn{
+  padding:13px 22px;border-radius:99px;font-weight:700;font-size:14.5px;
+  transition:.18s;display:inline-flex;align-items:center;gap:8px;
+  justify-content:center;
+}
+.btn:active{transform:scale(.97)}
+.btn:disabled{opacity:.6;cursor:default}
+.btn-primary{background:var(--rose);color:#fff;box-shadow:0 8px 20px rgba(199,91,107,.3)}
+.btn-primary:hover:not(:disabled){background:var(--rose-dark)}
+.btn-ghost{background:#fff;color:var(--rose);border:1.5px solid var(--rose-soft)}
+.btn-ghost:hover:not(:disabled){background:var(--rose-soft)}
+.btn-done{background:#E7F0E8;color:#4E7352}
+.btn-done:hover{background:#D6E7D8}
+.btn-flat{background:var(--paper);border:1.5px solid var(--line);color:var(--muted)}
+.btn-flat:hover{border-color:var(--rose-soft);color:var(--rose)}
+.btn-sm{padding:9px 16px;font-size:13px}
+
+.empty{
+  text-align:center;padding:48px 24px;color:var(--muted);
+}
+.empty .emoji{font-size:44px;display:block;margin-bottom:14px}
+.empty p{line-height:1.65;max-width:340px;margin:0 auto 20px;font-size:15px}
+
+/* ---------- LIST ---------- */
+.filters{
+  display:flex;gap:8px;overflow-x:auto;padding:4px 0 14px;
+  scrollbar-width:none;margin-bottom:4px;
+}
+.filters::-webkit-scrollbar{display:none}
+.filters button{
+  flex:0 0 auto;padding:8px 15px;border-radius:99px;font-size:13px;font-weight:700;
+  background:#fff;border:1.5px solid var(--line);color:var(--muted);transition:.16s;
+}
+.filters button:hover{border-color:var(--rose-soft);color:var(--rose)}
+.filters button.active{background:var(--ink);border-color:var(--ink);color:#fff}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:12px}
+.act{
+  background:var(--paper);border:1px solid var(--line);border-radius:16px;
+  padding:16px 16px 14px;text-align:left;transition:.18s;
+  display:flex;flex-direction:column;gap:8px;position:relative;
+  box-shadow:var(--shadow-sm);
+}
+.act:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:var(--rose-soft)}
+.act.done{background:#FBFDFB;border-color:#D8E9DA}
+.act-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.act-cat{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--rose)}
+.act-title{font-family:'Fraunces',Georgia,serif;font-size:16.5px;font-weight:700;line-height:1.28;color:var(--ink)}
+.act-desc{font-size:13px;color:var(--muted);line-height:1.5}
+.tick{
+  width:22px;height:22px;border-radius:50%;background:#E7F0E8;color:#4E7352;
+  display:grid;place-items:center;font-size:12px;flex:0 0 auto;
+}
+.note-dot{position:absolute;bottom:12px;right:14px;font-size:12px;opacity:.5}
+
+/* ---------- ROLLING OVERLAY ---------- */
+.rolling{
+  position:fixed;inset:0;z-index:250;
+  background:rgba(44,33,27,.66);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  display:grid;place-items:center;padding:24px;
+}
+.rolling[hidden]{display:none}
+.rolling-card{
+  background:var(--paper);
+  border-radius:24px;
+  padding:36px 26px 34px;
+  max-width:520px;width:100%;
+  text-align:center;
+  box-shadow:0 30px 80px rgba(0,0,0,.35);
+  position:relative;
+  overflow:hidden;
+  border-top:6px solid var(--rose);
+  animation:fadeIn .2s ease;
+}
+.rolling-card::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 50% 0%, rgba(199,91,107,.07), transparent 60%);
+}
+.rolling-label{
+  font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--rose);font-weight:700;margin-bottom:16px;
+}
+.roll-cat{
+  display:inline-block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:700;color:var(--rose-dark);margin-bottom:12px;
+  background:var(--rose-soft);padding:5px 13px;border-radius:99px;
+  min-height:24px;
+}
+.roll-title{
+  font-size:clamp(22px,5vw,31px);line-height:1.15;
+  min-height:2.4em;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .15s ease;
+  color:var(--ink);
+}
+.roll-title.pop{animation:popIn .6s cubic-bezier(.22,1.4,.36,1);color:var(--rose)}
+@keyframes popIn{
+  0%{transform:scale(.82)}
+  55%{transform:scale(1.09)}
+  100%{transform:scale(1)}
+}
+
+/* ---------- MODAL ---------- */
+.modal{
+  position:fixed;inset:0;z-index:200;
+  background:rgba(44,33,27,.5);
+  backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+  display:flex;align-items:flex-end;justify-content:center;
+  padding:0;animation:fadeIn .2s ease;
+}
+@media(min-width:700px){.modal{align-items:center;padding:24px}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal[hidden]{display:none}
+.modal-card{
+  background:var(--cream);width:100%;max-width:600px;
+  max-height:92vh;overflow-y:auto;
+  border-radius:24px 24px 0 0;
+  padding:26px 20px 34px;position:relative;
+  animation:slideUp .3s cubic-bezier(.22,1,.36,1);
+}
+@media(min-width:700px){.modal-card{border-radius:24px;padding:32px 30px}}
+@keyframes slideUp{from{transform:translateY(30px);opacity:.6}to{transform:none;opacity:1}}
+.modal-close{
+  position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;
+  background:#fff;border:1px solid var(--line);color:var(--muted);
+  font-size:15px;display:grid;place-items:center;box-shadow:var(--shadow-sm);
+  z-index:2;
+}
+.modal-close:hover{color:var(--rose);border-color:var(--rose-soft)}
+
+.detail .chip-cat{
+  display:inline-block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:700;color:var(--rose);margin-bottom:10px;
+}
+.detail h2{font-size:clamp(22px,4.6vw,29px);line-height:1.15;margin-bottom:10px;padding-right:36px}
+.detail .detail-desc{color:var(--muted);line-height:1.65;font-size:15px;margin-bottom:14px}
+.block{margin-top:26px}
+.block h3{font-size:17px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.count{
+  font-family:'Karla',sans-serif;font-size:12px;font-weight:700;color:var(--muted);
+  background:#fff;border:1px solid var(--line);border-radius:99px;padding:2px 9px;
+}
+#note{
+  width:100%;min-height:130px;resize:vertical;
+  padding:15px;border-radius:16px;border:1.5px solid var(--line);
+  background:#fff;font-size:15px;line-height:1.6;color:var(--ink);
+  outline:none;transition:.16s;
+}
+#note:focus{border-color:var(--rose);box-shadow:0 0 0 4px var(--rose-soft)}
+.hint{font-size:12px;color:var(--muted);margin-top:8px;opacity:.85}
+.hint.saved{color:var(--sage);opacity:1}
+.hint.warn{
+  color:#7A4A1C;background:#FCF1DC;border:1px solid #F0DDB6;
+  padding:10px 13px;border-radius:12px;opacity:1;line-height:1.55;font-size:12.5px;
+  margin-top:12px;
+}
+
+.photo-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));
+  gap:8px;margin-bottom:12px;
+}
+.photo-item{
+  position:relative;aspect-ratio:1;border-radius:14px;overflow:hidden;
+  background:#eee;border:1px solid var(--line);
+}
+.photo-item img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-del{
+  position:absolute;top:5px;right:5px;width:26px;height:26px;border-radius:50%;
+  background:rgba(0,0,0,.58);color:#fff;font-size:12px;display:grid;place-items:center;
+  opacity:0;transition:.18s;
+}
+.photo-item:hover .photo-del,.photo-item:focus-within .photo-del{opacity:1}
+@media(hover:none){.photo-del{opacity:.92}}
+
+.pdf-block{margin-top:28px}
+.pdf-block .btn{width:100%;padding:16px 22px;font-size:15px}
+
+/* ---------- RECUERDOS ---------- */
+.rec-group{margin-bottom:26px}
+.rec-head{
+  display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap;
+}
+.rec-head h3{font-size:17px}
+.rec-head span{font-size:12.5px;color:var(--muted);font-weight:700}
+.rec-pdf{margin-left:auto}
+.rec-photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-bottom:10px}
+.rec-photo{aspect-ratio:1;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#eee}
+.rec-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:.3s}
+.rec-photo img:hover{transform:scale(1.05)}
+.rec-note{
+  background:#fff;border:1px solid var(--line);border-left:4px solid var(--rose-soft);
+  border-radius:12px;padding:13px 15px;font-size:14.5px;line-height:1.6;
+  color:#4A3D35;white-space:pre-wrap;
+}
+
+/* ---------- AJUSTES ---------- */
+.setting{
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:18px;border-bottom:1px solid var(--line);
+}
+.setting:last-child{border-bottom:none}
+.setting h4{font-size:15.5px;margin-bottom:4px;font-family:'Karla',sans-serif;font-weight:700}
+.setting p{font-size:13px;color:var(--muted);line-height:1.5;max-width:340px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;text-align:center}
+.stat b{display:block;font-family:'Fraunces',serif;font-size:26px;color:var(--rose)}
+.stat span{font-size:11.5px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+
+/* ---------- TOAST ---------- */
+.toast{
+  position:fixed;left:50%;bottom:26px;transform:translate(-50%,120%);
+  background:var(--ink);color:#fff;padding:13px 22px;border-radius:99px;
+  font-size:14px;font-weight:700;z-index:300;box-shadow:0 12px 30px rgba(0,0,0,.25);
+  transition:transform .35s cubic-bezier(.22,1,.36,1);pointer-events:none;
+  max-width:90vw;text-align:center;
+}
+.toast.show{transform:translate(-50%,0)}
+
+.footer{
+  text-align:center;color:var(--muted);font-size:12.5px;
+  padding:10px 20px 30px;line-height:1.6;
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Un reto para dos</p>
+    <h1>100 días contigo</h1>
+    <p class="sub">Cien ideas para dejar de preguntar «¿y hoy qué hacemos?». Dejen que el azar elija, vivan el momento y descarguen el recuerdo en PDF.</p>
+    <div class="hero-tag">
+      <span>🎲 Una al azar</span>
+      <span>📝 Notas</span>
+      <span>📷 Fotos</span>
+      <span>📄 PDF</span>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button data-tab="lista" class="active">Las 100</button>
+  <button data-tab="recuerdos">Recuerdos</button>
+  <button data-tab="ajustes">Ajustes</button>
+</nav>
+
+<main>
+  <!-- LISTA -->
+  <section class="tab-panel active" id="tab-lista">
+    <div class="notice">
+      <span class="ico">💾</span>
+      <p><b>Tus recuerdos viven solo en este dispositivo.</b> No se guardan en ningún servidor. Si borras los datos del navegador, cambias de equipo o usas modo incógnito, se perderán. <b>Descarga el PDF al terminar cada actividad.</b></p>
+    </div>
+
+    <div class="surprise-wrap">
+      <button class="btn btn-primary surprise-btn" id="surpriseBtn">🎲 Sorpréndenos</button>
+      <p class="hint" style="text-align:center;margin-top:8px">Una actividad al azar, con todos sus detalles.</p>
+    </div>
+
+    <div class="filters" id="filters"></div>
+    <div class="grid" id="listGrid"></div>
+    <div class="empty" id="listEmpty" hidden>
+      <span class="emoji">🔍</span>
+      <p>No hay actividades en esa categoría.</p>
+    </div>
+  </section>
+
+  <!-- RECUERDOS -->
+  <section class="tab-panel" id="tab-recuerdos">
+    <div id="recuerdosContent"></div>
+  </section>
+
+  <!-- AJUSTES -->
+  <section class="tab-panel" id="tab-ajustes">
+    <div class="stats">
+      <div class="stat"><b id="statDone">0</b><span>Hechas</span></div>
+      <div class="stat"><b id="statPhotos">0</b><span>Fotos</span></div>
+      <div class="stat"><b id="statNotes">0</b><span>Notas</span></div>
+    </div>
+
+    <div class="notice" style="margin-bottom:18px">
+      <span class="ico">📄</span>
+      <p><b>El PDF es tu respaldo permanente.</b> Las notas y fotos de esta app se guardan solo en tu navegador y pueden desaparecer. Descarga el PDF de cada actividad al terminarla y guárdalo donde no se borre.</p>
+    </div>
+
+    <div class="card">
+      <div class="setting">
+        <div>
+          <h4>Exportar todos los recuerdos</h4>
+          <p>Descarga un archivo JSON con sus notas, progreso y fotos. Útil para mover todo a otro dispositivo.</p>
+        </div>
+        <button class="btn btn-ghost btn-sm" id="exportBtn">Exportar</button>
+      </div>
+      <div class="setting">
+        <div>
+          <h4>Importar respaldo</h4>
+          <p>Restaura un archivo exportado antes. Se reemplazará todo lo actual.</p>
+        </div>
+        <button class="btn btn-ghost btn-sm" id="importBtn">Importar</button>
+        <input type="file" id="importInput" accept="application/json,.json" hidden>
+      </div>
+      <div class="setting">
+        <div>
+          <h4>Borrar todo</h4>
+          <p>Elimina el progreso, las notas y las fotos de este dispositivo. No se puede deshacer.</p>
+        </div>
+        <button class="btn btn-flat btn-sm" id="resetBtn" style="color:#B4444A">Borrar</button>
+      </div>
+    </div>
+
+    <p class="hint" style="margin-top:18px;text-align:center">
+      Todos sus datos se guardan <b>solo en este dispositivo</b> (en el navegador). Nadie más los ve.
+    </p>
+  </section>
+</main>
+
+<p class="footer">Hecho con cariño para parejas que quieren más momentos y menos «no sé». 💞</p>
+
+<!-- ROLLING OVERLAY -->
+<div class="rolling" id="rolling" hidden>
+  <div class="rolling-card">
+    <p class="rolling-label">Eligiendo por ustedes…</p>
+    <p class="roll-cat" id="rollCat">—</p>
+    <h2 class="roll-title" id="rollTitle">—</h2>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal" hidden>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Cerrar">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* =========================================================
+   100 ACTIVIDADES
+   ========================================================= */
+const ACTIVITIES = [
+  /* --- EN CASA --- */
+  {id:1,  t:"Noche de cine temática", c:"En casa", d:"Elijan un país, vean una película de ahí y cocinen algo típico para acompañar. Sin celulares durante la peli."},
+  {id:2,  t:"Maratón de series con reglas", c:"En casa", d:"Tres capítulos cada uno elige uno. El que pierde el turno prepara las palomitas."},
+  {id:3,  t:"Noche de juegos de mesa", c:"En casa", d:"Saca esos juegos que nunca abren. Apuesta algo divertido: el que pierde hace el desayuno mañana."},
+  {id:4,  t:"Karaoke en casa", c:"En casa", d:"Cierren las cortinas, suban el volumen y canten desafinados sin vergüenza. La playlist la arma cada uno para el otro."},
+  {id:5,  t:"Fuerte de cobijas y pelis", c:"En casa", d:"Construyan el fuerte más épico de la sala con sillas, sábanas y cojines. Adentro: peli y algo rico."},
+  {id:6,  t:"Cena a la luz de velas", c:"En casa", d:"Sin luces, solo velas. Vístanse como si fueran a un restaurante caro y cocinen (o pidan) algo especial."},
+  {id:7,  t:"Spa casero", c:"En casa", d:"Aceites, música suave, antifaz y turnos de masaje. Uno cuida al otro durante 30 minutos y luego cambian."},
+  {id:8,  t:"Bailar en la sala a medianoche", c:"En casa", d:"Pongan tres canciones que les recuerden algo y bailen descalzos. Sin coreografía, sin público."},
+  {id:9,  t:"Ver el amanecer juntos", c:"En casa", d:"Alarma temprano, café caliente y una ventana o el techo. El silencio también es una cita."},
+  {id:10, t:"Las 36 preguntas", c:"En casa", d:"Busquen «las 36 preguntas para enamorarse» y respóndanlas en voz alta. Van a descubrir algo nuevo."},
+  {id:11, t:"Tres horas sin celular", c:"En casa", d:"Dejen los teléfonos en un cajón. Charlemos, cocinemos, juguemos. Noten lo que pasa."},
+  {id:12, t:"Rompecabezas con música", c:"En casa", d:"Compren un rompecabezas de 500+ piezas, pongan un disco viejo y termínenlo (o intenten)."},
+  {id:13, t:"Trivia: ¿cuánto se conocen?", c:"En casa", d:"Cada uno escribe 10 preguntas sobre sí mismo. Se turnan para responder. Anoten los resultados."},
+  {id:14, t:"Noche de pelis de terror", c:"En casa", d:"Una peli de miedo, todas las luces apagadas y una cobija compartida. Los sustos se disfrutan mejor acompañado."},
+  {id:89, t:"Adoptar una planta", c:"En casa", d:"Vayan a comprar una planta juntos, pónganle nombre y decidan quién la riega qué día. Es un proyecto de dos."},
+  {id:94, t:"Noche de chistes y memes", c:"En casa", d:"Pasen el celular durante una hora mostrando solo cosas que los hagan reír. Prohibido contenido serio."},
+  {id:95, t:"Fotos viejas: recordar", c:"En casa", d:"Abran el carrete y cuenten la historia detrás de cada foto. ¿Cuál es la primera que se tomaron juntos?"},
+  {id:96, t:"21 preguntas", c:"En casa", d:"Uno piensa en algo (un lugar, un objeto, una persona) y el otro adivina con 21 preguntas de sí o no."},
+  {id:99, t:"Escondidas y retos en casa", c:"En casa", d:"Escondidas de adultos, o mejor: una lista de retos ridículos (hablar en acento 20 min, imitar al otro)."},
+
+  /* --- COCINA --- */
+  {id:15, t:"Receta de otro país", c:"Cocina", d:"Elijan un país que ninguno haya visitado y cocinen su plato más famoso. Coman en el piso si quieren."},
+  {id:16, t:"Pizza casera desde cero", c:"Cocina", d:"Masa hecha en casa, cada uno diseña su mitad con lo que quiera. El horno dirá quién gana."},
+  {id:17, t:"Postre juntos", c:"Cocina", d:"Algo dulce, simple y compartido. Regla: no se vale probar la mezcla antes de que esté lista (bueno, un poquito sí)."},
+  {id:18, t:"Desayuno sorpresa en la cama", c:"Cocina", d:"Uno se levanta primero y prepara todo. El otro desayuna sin saber qué viene. Al día siguiente, cambian."},
+  {id:19, t:"Sushi en casa", c:"Cocina", d:"Arroz, alga y todos los rellenos posibles. Se vale hacer rolls deformes. Se comen igual."},
+  {id:20, t:"Noche de tacos armados", c:"Cocina", d:"Pongan la mesa con todo: tortillas, salsas, carnes, verduras. Cada uno arma su combinación ganadora."},
+  {id:21, t:"Pan casero", c:"Cocina", d:"Amasar es terapéutico. Mientras leva el pan, hagan algo juntos. Coman el resultado calientito con mantequilla."},
+  {id:22, t:"Reto de licuados", c:"Cocina", d:"Cada uno hace un licuado con 3 ingredientes al azar de la nevera. El otro califica del 1 al 10."},
+  {id:23, t:"MasterChef con lo que hay", c:"Cocina", d:"Abran la nevera y la alacena: solo con eso, cada uno prepara un plato. El otro es el jurado."},
+  {id:24, t:"Chocolates o bombones", c:"Cocina", d:"Derritan chocolate, sumerjan frutas, nueces, galletas. Déjenlos enfriar mientras ven algo. Regalo listo."},
+  {id:25, t:"Cata en casa", c:"Cocina", d:"Café, cerveza, vino o chocolate: compren 3 variedades, prueben a ciegas y adivinen cuál es cuál."},
+  {id:26, t:"Cocinar con presupuesto fijo", c:"Cocina", d:"Vayan al súper con un monto cerrado y compren solo con eso. Cocinen lo que salga y véanlo como un desafío."},
+  {id:97, t:"Cocinar para alguien más", c:"Cocina", d:"Preparen un plato y llévenselo a un vecino, a un familiar o a alguien que lo necesite. Cocinar para otros une."},
+
+  /* --- ROMÁNTICO --- */
+  {id:27, t:"Cartas de amor a mano", c:"Romántico", d:"Papel y lápiz. Escríbanse una carta sin pensar demasiado. Guárdenla para leerla dentro de un año."},
+  {id:28, t:"Votos simbólicos en casa", c:"Romántico", d:"Escriban sus propias promesas de pareja, léanlas en voz alta y celébrenlo con un brindis."},
+  {id:29, t:"Sesión de fotos en pareja", c:"Romántico", d:"Elijan un lugar bonito (o su casa), usen el temporizador y tómense fotos de verdad, no solo selfies."},
+  {id:30, t:"Masaje de 20 minutos", c:"Romántico", d:"Veinte minutos cada uno, cronómetro en mano. Sin pantallas, sin interrupciones."},
+  {id:31, t:"Cita con dress code", c:"Romántico", d:"Arréglense como para una ocasión especial… y quédense en casa. La ropa bonita cambia la energía."},
+  {id:32, t:"Su película favorita del otro", c:"Romántico", d:"Vean la peli favorita de tu pareja sin quejarse ni una vez. Después expliquen por qué les gusta tanto."},
+  {id:33, t:"La primera impresión", c:"Romántico", d:"Cuéntenle al otro qué pensaron la primera vez que lo vieron y qué les llamó la atención."},
+  {id:34, t:"Baile lento en la cocina", c:"Romántico", d:"Una canción. Solo una. Pero báilenla como si fuera la última. Sin bromas."},
+  {id:35, t:"100 razones por las que te amo", c:"Romántico", d:"Cada uno escribe su lista. No tienen que llegar a 100, pero entre los dos sí. Léanlas después."},
+  {id:36, t:"Recrear su primera cita", c:"Romántico", d:"Vuelvan al lugar, pidan lo mismo, recuerden cómo se sentían. ¿Qué cambió y qué sigue igual?"},
+  {id:37, t:"Helado y caminata", c:"Romántico", d:"Un helado cada uno, una caminata sin destino fijo y una conversación sin tema obligado."},
+  {id:38, t:"Intercambiar roles por un día", c:"Romántico", d:"Cada uno hace las tareas del otro durante un día. Es la mejor forma de entender su día a día."},
+  {id:100,t:"Renovar promesas", c:"Romántico", d:"Escriban una carta sobre lo que quieren construir juntos de aquí en adelante. Guárdenla como cierre del reto."},
+
+  /* --- SALIR --- */
+  {id:39, t:"Picnic en un parque", c:"Salir", d:"Cobija, algo rico y un parque. Si llueve, se hace en el piso de la sala con la ventana abierta."},
+  {id:40, t:"Ruta de comida callejera", c:"Salir", d:"Tres paradas, algo pequeño en cada una. Elijan el mejor bocado de la noche y vuelvan por él otro día."},
+  {id:41, t:"Museo gratuito", c:"Salir", d:"Busquen un museo con entrada libre y elijan cada uno su obra favorita. Expliquen por qué."},
+  {id:42, t:"Un barrio desconocido", c:"Salir", d:"Vayan a una zona de la ciudad donde nunca hayan caminado. Caminen sin mapa durante una hora."},
+  {id:43, t:"Cine en la tarde", c:"Salir", d:"Función de la tarde entre semana (si se puede). Cine vacío, palomitas grandes y peli random."},
+  {id:44, t:"Mercado local", c:"Salir", d:"Vayan al mercado más tradicional que encuentren. Compren una fruta que nunca hayan probado."},
+  {id:45, t:"Subir un cerro o mirador", c:"Salir", d:"Lleguen arriba y quédense hasta que se les pase el cansancio. La vista se disfruta más sin prisa."},
+  {id:46, t:"Feria de pulgas", c:"Salir", d:"Cada uno elige un objeto que le recuerde al otro por menos de $5. Se lo regalan al final."},
+  {id:47, t:"Tour de cafeterías", c:"Salir", d:"Tres cafeterías, un café en cada una. Califiquen: ambiente, sabor y charla. Coronen a la ganadora."},
+  {id:48, t:"Concierto o toque en vivo", c:"Salir", d:"Busquen música en vivo cerca, aunque no conozcan al artista. Descubrir juntos es doblemente bueno."},
+  {id:49, t:"Andar en bici", c:"Salir", d:"Ruta nueva, ritmo tranquilo, una parada para algo frío. Lo importante es el camino, no el destino."},
+  {id:50, t:"Playa, río o lago", c:"Salir", d:"El agua cerca de casa siempre es un plan. Lleven algo para comer y quédense hasta el atardecer."},
+  {id:51, t:"Elegir un libro para el otro", c:"Salir", d:"En una librería, cada uno elige un libro pensando en el otro. Después lo leen y lo comentan."},
+  {id:52, t:"Restaurante que nunca probaron", c:"Salir", d:"Elijan un lugar que siempre han visto pero nunca han entrado. Pidan algo que no conozcan."},
+  {id:90, t:"Visitar a familia o amigos", c:"Salir", d:"Vayan juntos a ver a alguien importante. Compartir su mundo con el otro también es un plan de pareja."},
+  {id:92, t:"Evento gratuito del barrio", c:"Salir", d:"Busquen actividades gratis en su ciudad: ferias, talleres, exposiciones. Vayan sin expectativas."},
+  {id:98, t:"Museo + café", c:"Salir", d:"Una exposición y luego una charla de café sobre lo que vieron. La mitad del plan es la conversación."},
+
+  /* --- AVENTURA --- */
+  {id:53, t:"Acampar", c:"Aventura", d:"¿Sin tiempo para ir lejos? Armen la carpa en el patio o la terraza. Estrellas, cobijas y algo caliente."},
+  {id:54, t:"Senderismo nuevo", c:"Aventura", d:"Busquen un sendero cerca que nunca hayan hecho. Lleven agua, snacks y paciencia."},
+  {id:55, t:"Deporte o clase nueva", c:"Aventura", d:"Escalada, baile, boxeo, cerámica… algo que ninguno de los dos haya intentado. Reírse del ridículo es parte."},
+  {id:56, t:"Parque de diversiones", c:"Aventura", d:"Suban a todo lo que se atrevan. El que se asuste paga el próximo helado."},
+  {id:57, t:"Hacer algo que les dé miedo", c:"Aventura", d:"Hagan juntos una lista de 5 cosas que les den miedo o vergüenza. Elijan una y háganla hoy."},
+  {id:58, t:"Salir sin rumbo", c:"Aventura", d:"Salgan de casa y en cada esquina el otro decide: izquierda, derecha o derecho. Nada de mapas."},
+  {id:59, t:"Día con presupuesto mínimo", c:"Aventura", d:"Con el equivalente a un café cada uno, pasen el día entero. La creatividad es parte del plan."},
+  {id:60, t:"Pueblo cercano de un día", c:"Aventura", d:"Elijan un pueblo a un par de horas, vayan sin itinerario y vuelvan cuando se les antoje."},
+  {id:61, t:"La ciudad en bici", c:"Aventura", d:"Renta o saquen las bicis y crucen la ciudad por una ruta nueva. Paren en un lugar que nunca habían visto."},
+  {id:62, t:"Caminata nocturna", c:"Aventura", d:"Salgan a caminar cuando ya esté oscuro, por un lugar seguro y conocido. La ciudad se ve distinta."},
+  {id:63, t:"Probar algo nunca comido", c:"Aventura", d:"Vayan a un mercado y compren la fruta o el platillo más raro que encuentren. Lo prueban juntos."},
+  {id:64, t:"Día de «sí a todo»", c:"Aventura", d:"Durante un día, cada propuesta del otro se acepta (dentro de lo razonable y seguro). Empieza la aventura."},
+  {id:93, t:"Ejercicio juntos", c:"Aventura", d:"Una rutina, un trote o una clase en YouTube. Sudar juntos libera endorfinas y buen humor."},
+
+  /* --- CREATIVO --- */
+  {id:65, t:"Pintar un cuadro juntos", c:"Creativo", d:"Un lienzo, dos pinceles. Pueden turnarse o pintar a la vez. El resultado se cuelga en la casa."},
+  {id:66, t:"Cápsula del tiempo", c:"Creativo", d:"Una caja con cartas, fotos y objetos. Sellen con fecha de apertura: un año, cinco años."},
+  {id:67, t:"Escribir una canción o poema", c:"Creativo", d:"Puede ser malísimo, no importa. La meta es terminar algo juntos y cantarlo o leerlo en voz alta."},
+  {id:68, t:"Álbum de fotos físico", c:"Creativo", d:"Impriman sus fotos favoritas y armen un álbum a mano. Escriban una nota al lado de cada una."},
+  {id:69, t:"Esculturas con plastilina", c:"Creativo", d:"Cada uno esculpe al otro… sin mirar. Diez minutos, máximo esfuerzo, cero filtro."},
+  {id:70, t:"Video «un día en nuestra vida»", c:"Creativo", d:"Graben momentos del día y edítenlos. Será su recuerdo favorito en unos años."},
+  {id:71, t:"DIY para decorar la casa", c:"Creativo", d:"Elijan un rincón y transformen algo: una repisa, un cuadro, una lámpara. Un proyecto de dos."},
+  {id:72, t:"Lista de sueños juntos", c:"Creativo", d:"Escriban 30 cosas que quieran hacer juntos (grandes y pequeñas). Marquen la primera que harán."},
+  {id:73, t:"Mapa de lugares importantes", c:"Creativo", d:"Dibujen un mapa con los lugares que marcaron su historia: donde se conocieron, la primera cita, el primer viaje."},
+  {id:74, t:"Inventar un juego de mesa", c:"Creativo", d:"Reglas propias, cartón y dados. Juéguenlo al menos una vez. Si es divertido, se queda en casa."},
+  {id:75, t:"Origami o manualidades", c:"Creativo", d:"Sigan un tutorial de papiroflexia. El reto es que el resultado se parezca a lo que dice el video."},
+  {id:76, t:"Escribir un cuento entre los dos", c:"Creativo", d:"Uno escribe una frase, el otro continúa. Alternen hasta terminar la historia. Léanla después."},
+  {id:91, t:"Clase de cerámica", c:"Creativo", d:"Manos sucias, risas y una taza torcida que será su favorita para siempre."},
+
+  /* --- RELAX --- */
+  {id:77, t:"Yoga o meditación en pareja", c:"Relax", d:"Un video de yoga para dos o diez minutos de respiración juntos. Después se sienten de otra manera."},
+  {id:78, t:"Tarde de lectura en silencio", c:"Relax", d:"Cada uno con su libro, en el mismo espacio. Estar juntos sin hablar también es intimidad."},
+  {id:79, t:"Baño de tina con velas", c:"Relax", d:"Agua caliente, sales, velas y música suave. Si no hay tina, un buen baño con aromas funciona igual."},
+  {id:80, t:"Masaje con aceites", c:"Relax", d:"Aceite tibio, música tranquila y turnos de 25 minutos. Sin celulares, sin reloj de por medio."},
+  {id:81, t:"Noche de té y charla", c:"Relax", d:"Dos tés, la luz baja y una conversación sin urgencias. Hablen de lo que no hablan normalmente."},
+  {id:82, t:"Atardecer en silencio", c:"Relax", d:"Busquen un lugar para ver el atardecer y guárdenlo juntos, sin hablar. Solo mirar."},
+  {id:83, t:"Siesta juntos sin culpa", c:"Relax", d:"Un domingo, una cobija y cero pendientes. Dormir la siesta abrazados es un plan legítimo."},
+  {id:84, t:"Caminata lenta en la naturaleza", c:"Relax", d:"Un parque, un bosque, un río. Caminen despacio, respiren hondo y no se pongan metas de distancia."},
+  {id:85, t:"Desintoxicación digital 24h", c:"Relax", d:"Un día completo sin redes sociales. Avísenle a quien tengan que avisarle y dedíquense al mundo real."},
+  {id:86, t:"Estiramiento y respiración", c:"Relax", d:"Quince minutos de estiramiento guiado y quince de respiración profunda. Terminen con un abrazo largo."},
+  {id:87, t:"Música suave y charla", c:"Relax", d:"Una playlist tranquila y preguntas sencillas: ¿cómo estás de verdad? ¿qué te tiene pensando esta semana?"},
+  {id:88, t:"Día de no hacer nada", c:"Relax", d:"El plan es no tener plan. Despierten sin alarma, decidan sobre la marcha y disfruten el vacío."}
+];
+
+/* =========================================================
+   ESTADO (localStorage — solo en este dispositivo)
+   ========================================================= */
+const STORAGE_KEY = 'cien-dias-contigo-v1';
+let state = loadState();
+
+function defaultState(){
+  return { done:{}, notes:{}, lastPick:null, startedAt:Date.now() };
+}
+function loadState(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(!raw) return defaultState();
+    const parsed = JSON.parse(raw);
+    return Object.assign(defaultState(), parsed);
+  }catch(e){ return defaultState(); }
+}
+function saveState(){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+  catch(e){ console.warn('No se pudo guardar', e); }
+}
+function todayStr(){
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+/* =========================================================
+   FOTOS (IndexedDB — solo en este dispositivo)
+   ========================================================= */
+const DB_NAME = 'cien-dias-contigo';
+const STORE = 'photos';
+let dbPromise = null;
+
+function openDB(){
+  if(dbPromise) return dbPromise;
+  dbPromise = new Promise((resolve, reject)=>{
+    const req = indexedDB.open(DB_NAME, 1);
+    req.onupgradeneeded = () => {
+      const db = req.result;
+      if(!db.objectStoreNames.contains(STORE)){
+        const store = db.createObjectStore(STORE, { keyPath:'id', autoIncrement:true });
+        store.createIndex('activityId', 'activityId', { unique:false });
+      }
+    };
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+  return dbPromise;
+}
+
+async function addPhoto(activityId, blob){
+  const db = await openDB();
+  return new Promise((resolve, reject)=>{
+    const tx = db.transaction(STORE, 'readwrite');
+    const req = tx.objectStore(STORE).add({ activityId, blob, createdAt: Date.now() });
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+async function photosFor(activityId){
+  const db = await openDB();
+  return new Promise((resolve, reject)=>{
+    const tx = db.transaction(STORE, 'readonly');
+    const req = tx.objectStore(STORE).index('activityId').getAll(activityId);
+    req.onsuccess = () => resolve(req.result || []);
+    req.onerror = () => reject(req.error);
+  });
+}
+async function allPhotos(){
+  const db = await openDB();
+  return new Promise((resolve, reject)=>{
+    const tx = db.transaction(STORE, 'readonly');
+    const req = tx.objectStore(STORE).getAll();
+    req.onsuccess = () => resolve(req.result || []);
+    req.onerror = () => reject(req.error);
+  });
+}
+async function deletePhoto(id){
+  const db = await openDB();
+  return new Promise((resolve, reject)=>{
+    const tx = db.transaction(STORE, 'readwrite');
+    const req = tx.objectStore(STORE).delete(id);
+    req.onsuccess = () => resolve();
+    req.onerror = () => reject(req.error);
+  });
+}
+async function clearPhotos(){
+  const db = await openDB();
+  return new Promise((resolve, reject)=>{
+    const tx = db.transaction(STORE, 'readwrite');
+    const req = tx.objectStore(STORE).clear();
+    req.onsuccess = () => resolve();
+    req.onerror = () => reject(req.error);
+  });
+}
+
+const urlCache = new Map();
+function photoURL(photo){
+  if(!urlCache.has(photo.id)){
+    urlCache.set(photo.id, URL.createObjectURL(photo.blob));
+  }
+  return urlCache.get(photo.id);
+}
+function revokePhotoURL(id){
+  if(urlCache.has(id)){
+    URL.revokeObjectURL(urlCache.get(id));
+    urlCache.delete(id);
+  }
+}
+
+/* =========================================================
+   UTILIDADES
+   ========================================================= */
+const $ = sel => document.querySelector(sel);
+const $$ = sel => Array.from(document.querySelectorAll(sel));
+
+function esc(str){
+  return String(str)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+function byId(id){ return ACTIVITIES.find(a => a.id === id); }
+function doneCount(){ return Object.keys(state.done).filter(id => state.done[id]).length; }
+
+let toastTimer;
+function toast(msg){
+  const el = $('#toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 2400);
+}
+
+function compressImage(file, maxSize = 1400, quality = 0.82){
+  return new Promise((resolve, reject)=>{
+    const img = new Image();
+    const objURL = URL.createObjectURL(file);
+    img.onload = () => {
+      URL.revokeObjectURL(objURL);
+      let { width, height } = img;
+      const scale = Math.min(1, maxSize / Math.max(width, height));
+      width = Math.round(width * scale);
+      height = Math.round(height * scale);
+      const canvas = document.createElement('canvas');
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, width, height);
+      canvas.toBlob(b => b ? resolve(b) : reject(new Error('toBlob falló')), 'image/jpeg', quality);
+    };
+    img.onerror = () => { URL.revokeObjectURL(objURL); reject(new Error('No se pudo leer la imagen')); };
+    img.src = objURL;
+  });
+}
+function blobToDataURL(blob){
+  return new Promise((resolve, reject)=>{
+    const r = new FileReader();
+    r.onload = () => resolve(r.result);
+    r.onerror = () => reject(r.error);
+    r.readAsDataURL(blob);
+  });
+}
+function dataURLToBlob(dataURL){
+  return fetch(dataURL).then(r => r.blob());
+}
+function getImageDims(src){
+  return new Promise((resolve, reject)=>{
+    const img = new Image();
+    img.onload = () => resolve({ w: img.naturalWidth || 1, h: img.naturalHeight || 1 });
+    img.onerror = () => reject(new Error('dims'));
+    img.src = src;
+  });
+}
+
+/* =========================================================
+   TAB LISTA
+   ========================================================= */
+const CATEGORIES = ['Todas', 'En casa', 'Cocina', 'Romántico', 'Salir', 'Aventura', 'Creativo', 'Relax'];
+let activeFilter = 'Todas';
+
+function renderFilters(){
+  const el = $('#filters');
+  el.innerHTML = CATEGORIES.map(c =>
+    `<button data-cat="${esc(c)}" class="${c === activeFilter ? 'active' : ''}">${esc(c)}</button>`
+  ).join('');
+  el.querySelectorAll('button').forEach(b => {
+    b.addEventListener('click', () => {
+      activeFilter = b.dataset.cat;
+      renderFilters();
+      renderList();
+    });
+  });
+}
+
+function renderList(){
+  const grid = $('#listGrid');
+  const items = ACTIVITIES.filter(a => activeFilter === 'Todas' || a.c === activeFilter);
+
+  $('#listEmpty').hidden = items.length > 0;
+  grid.innerHTML = items.map(a => {
+    const isDone = !!state.done[a.id];
+    const hasNote = !!(state.notes[a.id] || '').trim();
+    return `
+      <button class="act ${isDone ? 'done' : ''}" data-id="${a.id}">
+        <div class="act-top">
+          <span class="act-cat">${esc(a.c)}</span>
+          ${isDone ? '<span class="tick">✓</span>' : ''}
+        </div>
+        <span class="act-title">${esc(a.t)}</span>
+        <span class="act-desc">${esc(a.d.length > 78 ? a.d.slice(0, 78) + '…' : a.d)}</span>
+        ${hasNote ? '<span class="note-dot">📝</span>' : ''}
+      </button>`;
+  }).join('');
+
+  grid.querySelectorAll('.act').forEach(btn => {
+    btn.addEventListener('click', () => openActivity(Number(btn.dataset.id)));
+  });
+}
+
+/* =========================================================
+   SORPRÉNDENOS → animación de ruleta + detalle
+   ========================================================= */
+let isRolling = false;
+
+function pickRandomAndOpen(){
+  if(isRolling) return;
+  isRolling = true;
+
+  const pending = ACTIVITIES.filter(a => !state.done[a.id]);
+  const pool = pending.length ? pending : ACTIVITIES;
+  let choice;
+  do {
+    choice = pool[Math.floor(Math.random() * pool.length)];
+  } while(pool.length > 1 && state.lastPick && choice.id === state.lastPick);
+
+  state.lastPick = choice.id;
+  saveState();
+
+  rollAnimation(pool, choice, async () => {
+    await new Promise(r => setTimeout(r, 620));
+    $('#rolling').hidden = true;
+    isRolling = false;
+    openActivity(choice.id);
+  });
+}
+
+function rollAnimation(pool, choice, onDone){
+  const overlay = $('#rolling');
+  const titleEl = $('#rollTitle');
+  const catEl = $('#rollCat');
+
+  titleEl.classList.remove('pop');
+  overlay.hidden = false;
+
+  const start = performance.now();
+  const SPIN = 1500;   // giro rápido
+  const SLOW = 800;    // frenado
+  let last = 0;
+
+  function step(){
+    const t = performance.now() - start;
+
+    if(t < SPIN){
+      if(t - last > 55){
+        last = t;
+        const r = pool[Math.floor(Math.random()*pool.length)];
+        titleEl.textContent = r.t;
+        catEl.textContent = r.c;
+      }
+      requestAnimationFrame(step);
+    } else if(t < SPIN + SLOW){
+      const p = (t - SPIN) / SLOW;
+      const interval = 60 + 380 * p * p; // 60 → 440 ms
+      if(t - last > interval){
+        last = t;
+        const r = pool[Math.floor(Math.random()*pool.length)];
+        titleEl.textContent = r.t;
+        catEl.textContent = r.c;
+      }
+      requestAnimationFrame(step);
+    } else {
+      titleEl.textContent = choice.t;
+      catEl.textContent = choice.c;
+      titleEl.classList.add('pop');
+      onDone();
+    }
+  }
+  requestAnimationFrame(step);
+}
+
+/* =========================================================
+   MODAL DE ACTIVIDAD
+   ========================================================= */
+let currentId = null;
+let noteSaveTimer = null;
+
+async function openActivity(id){
+  currentId = id;
+  const a = byId(id);
+  if(!a) return;
+
+  const isDone = !!state.done[id];
+
+  $('#modalBody').innerHTML = `
+    <div class="detail">
+      <span class="chip-cat">${esc(a.c)} · #${a.id}</span>
+      <h2 id="modalTitle">${esc(a.t)}</h2>
+      <p class="detail-desc">${esc(a.d)}</p>
+      <button class="btn ${isDone ? 'btn-done' : 'btn-primary'}" id="toggleDone" style="width:100%">
+        ${isDone ? '✓ Hecha — tocar para deshacer' : 'Marcar como hecha'}
+      </button>
+
+      <div class="block">
+        <h3>Nuestras notas</h3>
+        <textarea id="note" placeholder="¿Cómo les fue? ¿Qué dijeron? ¿Qué quieren recordar de este día?"></textarea>
+        <p class="hint" id="noteStatus">Se guarda automáticamente en este dispositivo</p>
+      </div>
+
+      <div class="block">
+        <h3>Fotos <span class="count" id="photoCount">0</span></h3>
+        <div class="photo-grid" id="photoGrid"></div>
+        <input type="file" id="photoInput" accept="image/*" multiple hidden>
+        <button class="btn btn-ghost btn-sm" id="addPhotoBtn">📷 Agregar fotos</button>
+      </div>
+
+      <div class="pdf-block">
+        <button class="btn btn-primary" id="pdfBtn">📄 Descargar PDF del recuerdo</button>
+        <p class="hint warn">
+          <b>Este recuerdo se guarda solo en este dispositivo.</b> No hay servidores: si borras los datos del navegador, cambias de equipo o usas modo incógnito, se perderá. <b>Descarga el PDF al terminar la actividad</b> para conservarlo.
+        </p>
+      </div>
+    </div>`;
+
+  $('#modal').hidden = false;
+  document.body.style.overflow = 'hidden';
+
+  const noteEl = $('#note');
+  noteEl.value = state.notes[id] || '';
+
+  noteEl.addEventListener('input', () => {
+    $('#noteStatus').textContent = 'Guardando…';
+    $('#noteStatus').classList.remove('saved');
+    clearTimeout(noteSaveTimer);
+    noteSaveTimer = setTimeout(() => {
+      state.notes[id] = noteEl.value;
+      saveState();
+      $('#noteStatus').textContent = 'Guardado en este dispositivo ✓';
+      $('#noteStatus').classList.add('saved');
+      renderList();
+    }, 450);
+  });
+
+  $('#toggleDone').addEventListener('click', () => {
+    toggleDone(id);
+    openActivity(id);
+  });
+
+  $('#addPhotoBtn').addEventListener('click', () => $('#photoInput').click());
+  $('#photoInput').addEventListener('change', async (e) => {
+    const files = Array.from(e.target.files || []);
+    if(!files.length) return;
+    toast('Procesando fotos…');
+    for(const f of files){
+      if(!f.type.startsWith('image/')) continue;
+      try{
+        const blob = await compressImage(f);
+        await addPhoto(id, blob);
+      }catch(err){ console.warn(err); }
+    }
+    e.target.value = '';
+    await renderModalPhotos(id);
+    toast('Fotos guardadas en este dispositivo 💞');
+  });
+
+  $('#pdfBtn').addEventListener('click', async () => {
+    const btn = $('#pdfBtn');
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '⏳ Generando PDF…';
+    try {
+      await generatePDF(id);
+      toast('PDF descargado ✓');
+    } catch(err){
+      console.error(err);
+      toast('No se pudo generar el PDF');
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = original;
+    }
+  });
+
+  await renderModalPhotos(id);
+}
+
+async function renderModalPhotos(activityId){
+  const grid = $('#photoGrid');
+  if(!grid) return;
+  const photos = await photosFor(activityId);
+  const countEl = $('#photoCount');
+  if(countEl) countEl.textContent = photos.length;
+
+  grid.innerHTML = photos.map(p => `
+    <div class="photo-item">
+      <img src="${photoURL(p)}" alt="Foto del recuerdo" loading="lazy">
+      <button class="photo-del" data-del="${p.id}" aria-label="Eliminar foto">✕</button>
+    </div>`).join('');
+
+  grid.querySelectorAll('[data-del]').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const pid = Number(btn.dataset.del);
+      if(!confirm('¿Eliminar esta foto?')) return;
+      await deletePhoto(pid);
+      revokePhotoURL(pid);
+      await renderModalPhotos(activityId);
+      toast('Foto eliminada');
+    });
+  });
+}
+
+function closeModal(){
+  $('#modal').hidden = true;
+  document.body.style.overflow = '';
+  currentId = null;
+}
+
+/* =========================================================
+   MARCAR / DESMARCAR
+   ========================================================= */
+function toggleDone(id){
+  if(state.done[id]){
+    delete state.done[id];
+    toast('Actividad desmarcada');
+  }else{
+    state.done[id] = { date: todayStr() };
+    toast('¡Una más! 🎉');
+  }
+  saveState();
+  renderList();
+  renderStats();
+}
+
+/* =========================================================
+   PDF (generado 100% en el navegador, sin servidores)
+   ========================================================= */
+async function generatePDF(activityId){
+  if(!window.jspdf || !window.jspdf.jsPDF){
+    throw new Error('jsPDF no disponible');
+  }
+  const a = byId(activityId);
+  if(!a) throw new Error('Actividad no encontrada');
+
+  const notes = (state.notes[activityId] || '').trim();
+  const photos = await photosFor(activityId);
+
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+  const pageW = 210, pageH = 297, margin = 18;
+  const contentW = pageW - margin * 2;
+
+  /* Cabecera */
+  doc.setFillColor(199, 91, 107);
+  doc.rect(0, 0, pageW, 44, 'F');
+  doc.setFillColor(224, 121, 92);
+  doc.rect(0, 38, pageW, 6, 'F');
+
+  doc.setTextColor(255, 255, 255);
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(10.5);
+  doc.text('100 DÍAS CONTIGO', margin, 16);
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(9);
+  doc.text('Un recuerdo para dos', margin, 22);
+
+  const dateStr = new Date().toLocaleDateString('es-ES', { day:'2-digit', month:'long', year:'numeric' });
+  doc.text(dateStr, pageW - margin, 16, { align:'right' });
+
+  /* Etiqueta de actividad */
+  let y = 58;
+  doc.setTextColor(199, 91, 107);
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(10);
+  doc.text(`ACTIVIDAD #${a.id}  ·  ${a.c.toUpperCase()}`, margin, y);
+
+  /* Título */
+  y += 10;
+  doc.setTextColor(44, 33, 27);
+  doc.setFontSize(22);
+  const titleLines = doc.splitTextToSize(a.t, contentW);
+  doc.text(titleLines, margin, y);
+  y += titleLines.length * 8.5 + 4;
+
+  /* Descripción */
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(11);
+  doc.setTextColor(90, 80, 70);
+  const descLines = doc.splitTextToSize(a.d, contentW);
+  doc.text(descLines, margin, y);
+  y += descLines.length * 5.4 + 10;
+
+  /* Separador */
+  doc.setDrawColor(239, 226, 217);
+  doc.setLineWidth(0.6);
+  doc.line(margin, y, pageW - margin, y);
+  y += 12;
+
+  /* Notas */
+  doc.setTextColor(199, 91, 107);
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(13);
+  doc.text('Nuestras notas', margin, y);
+  y += 8;
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(11);
+  doc.setTextColor(60, 50, 44);
+  const noteLines = doc.splitTextToSize(notes || '—', contentW);
+  for(const line of noteLines){
+    if(y > pageH - 32){
+      doc.addPage();
+      y = 26;
+    }
+    doc.text(line, margin, y);
+    y += 6;
+  }
+  y += 8;
+
+  /* Fotos */
+  if(photos.length){
+    if(y > pageH - 45){
+      doc.addPage();
+      y = 26;
+    }
+    doc.setTextColor(199, 91, 107);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(13);
+    doc.text(`Fotos (${photos.length})`, margin, y);
+    y += 8;
+
+    const gap = 6;
+    const cols = 2;
+    const cellW = (contentW - gap * (cols - 1)) / cols;
+    const cellH = cellW;
+    let col = 0;
+    let rowY = y;
+
+    for(const p of photos){
+      if(rowY + cellH > pageH - 32){
+        doc.addPage();
+        rowY = 26;
+        col = 0;
+      }
+      const x = margin + col * (cellW + gap);
+      const dataURL = await blobToDataURL(p.blob);
+      let dims = { w: 1, h: 1 };
+      try { dims = await getImageDims(dataURL); } catch(e){}
+      const scale = Math.min(cellW / dims.w, cellH / dims.h);
+      const w = dims.w * scale, h = dims.h * scale;
+      const ix = x + (cellW - w) / 2;
+      const iy = rowY + (cellH - h) / 2;
+
+      doc.setFillColor(247, 240, 235);
+      doc.rect(x, rowY, cellW, cellH, 'F');
+
+      const fmt = dataURL.startsWith('data:image/png') ? 'PNG' : 'JPEG';
+      try { doc.addImage(dataURL, fmt, ix, iy, w, h); } catch(e){ console.warn('addImage', e); }
+
+      col++;
+      if(col === cols){ col = 0; rowY += cellH + gap; }
+    }
+    y = rowY + (col > 0 ? cellH : 0) + 8;
+  }
+
+  /* Pie en todas las páginas */
+  const total = doc.internal.getNumberOfPages();
+  for(let i = 1; i <= total; i++){
+    doc.setPage(i);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(8);
+    doc.setTextColor(150, 140, 130);
+    doc.text(
+      'Este recuerdo se generó en tu dispositivo. 100 días contigo no guarda nada en servidores.',
+      margin, pageH - 12
+    );
+    doc.text(`${i} / ${total}`, pageW - margin, pageH - 12, { align:'right' });
+  }
+
+  const safeTitle = a.t
+    .toLowerCase()
+    .replace(/[^a-z0-9áéíóúñ]+/gi, '-')
+    .replace(/^-|-$/g, '')
+    .slice(0, 40) || 'recuerdo';
+
+  doc.save(`100-dias-contigo-${String(a.id).padStart(3, '0')}-${safeTitle}.pdf`);
+}
+
+/* =========================================================
+   TAB RECUERDOS
+   ========================================================= */
+async function renderRecuerdos(){
+  const box = $('#recuerdosContent');
+  const photos = await allPhotos();
+  const noteIds = Object.keys(state.notes)
+    .map(Number)
+    .filter(id => (state.notes[id] || '').trim().length > 0);
+
+  if(photos.length === 0 && noteIds.length === 0){
+    box.innerHTML = `
+      <div class="empty">
+        <span class="emoji">📸</span>
+        <p>Aún no hay recuerdos guardados.<br>Elige una actividad, escríbele algo, sube fotos y descarga su PDF.</p>
+        <button class="btn btn-primary" id="goList" style="margin:0 auto">Ir a Las 100</button>
+      </div>`;
+    $('#goList').addEventListener('click', () => switchTab('lista'));
+    return;
+  }
+
+  const byActivity = new Map();
+  photos.forEach(p => {
+    if(!byActivity.has(p.activityId)) byActivity.set(p.activityId, []);
+    byActivity.get(p.activityId).push(p);
+  });
+
+  const ids = Array.from(new Set([...byActivity.keys(), ...noteIds]))
+    .sort((a,b) => {
+      const pa = Math.max(...(byActivity.get(a) || [{createdAt:0}]).map(p => p.createdAt), 0);
+      const pb = Math.max(...(byActivity.get(b) || [{createdAt:0}]).map(p => p.createdAt), 0);
+      return pb - pa;
+    });
+
+  box.innerHTML = `
+    <div class="notice">
+      <span class="ico">💾</span>
+      <p>Estos recuerdos están solo en este dispositivo. <b>Descarga el PDF de cada actividad</b> para conservarla aunque borres los datos del navegador.</p>
+    </div>
+    ` + ids.map(id => {
+    const a = byId(id);
+    if(!a) return '';
+    const ps = (byActivity.get(id) || []).sort((x,y) => y.createdAt - x.createdAt);
+    const note = (state.notes[id] || '').trim();
+    return `
+      <div class="rec-group">
+        <div class="rec-head">
+          <h3>${esc(a.t)}</h3>
+          <span>${ps.length ? ps.length + ' foto' + (ps.length>1?'s':'') : ''}${note ? (ps.length ? ' · ' : '') + 'nota' : ''}</span>
+          <button class="btn btn-ghost btn-sm rec-pdf" data-pdf="${id}">📄 PDF</button>
+        </div>
+        ${ps.length ? `<div class="rec-photos">${ps.map(p=>`
+          <div class="rec-photo"><img src="${photoURL(p)}" alt="${esc(a.t)}" loading="lazy"></div>`).join('')}</div>` : ''}
+        ${note ? `<div class="rec-note">${esc(note)}</div>` : ''}
+      </div>`;
+  }).join('');
+
+  box.querySelectorAll('[data-pdf]').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const id = Number(btn.dataset.pdf);
+      const original = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '⏳ Generando…';
+      try {
+        await generatePDF(id);
+        toast('PDF descargado ✓');
+      } catch(err){
+        console.error(err);
+        toast('No se pudo generar el PDF');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = original;
+      }
+    });
+  });
+}
+
+/* =========================================================
+   TAB AJUSTES
+   ========================================================= */
+async function renderStats(){
+  const photos = await allPhotos();
+  $('#statDone').textContent = doneCount();
+  $('#statPhotos').textContent = photos.length;
+  $('#statNotes').textContent = Object.values(state.notes).filter(n => (n||'').trim()).length;
+}
+
+async function exportData(){
+  try{
+    toast('Preparando respaldo…');
+    const photos = await allPhotos();
+    const payload = {
+      app: '100-dias-contigo',
+      version: 1,
+      exportedAt: new Date().toISOString(),
+      state: {
+        done: state.done,
+        notes: state.notes,
+        lastPick: state.lastPick,
+        startedAt: state.startedAt
+      },
+      photos: await Promise.all(photos.map(async p => ({
+        activityId: p.activityId,
+        createdAt: p.createdAt,
+        data: await blobToDataURL(p.blob)
+      })))
+    };
+    const blob = new Blob([JSON.stringify(payload)], { type:'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `100-dias-contigo-${todayStr()}.json`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+    toast('Respaldo descargado ✓');
+  }catch(err){
+    console.error(err);
+    toast('No se pudo exportar');
+  }
+}
+
+async function importData(file){
+  try{
+    const text = await file.text();
+    const payload = JSON.parse(text);
+    if(!payload || !payload.state) throw new Error('Formato inválido');
+
+    state.done = payload.state.done || {};
+    state.notes = payload.state.notes || {};
+    state.lastPick = payload.state.lastPick || null;
+    state.startedAt = payload.state.startedAt || Date.now();
+    saveState();
+
+    await clearPhotos();
+    urlCache.forEach(u => URL.revokeObjectURL(u));
+    urlCache.clear();
+
+    if(Array.isArray(payload.photos)){
+      for(const p of payload.photos){
+        if(!p.data) continue;
+        try{
+          const blob = await dataURLToBlob(p.data);
+          await addPhoto(p.activityId, blob);
+        }catch(e){ console.warn('Foto no importada', e); }
+      }
+    }
+
+    renderList();
+    renderRecuerdos();
+    renderStats();
+    toast('Respaldo restaurado ✓');
+  }catch(err){
+    console.error(err);
+    toast('Archivo inválido');
+  }
+}
+
+async function resetAll(){
+  if(!confirm('¿Borrar todo? Se perderán el progreso, las notas y las fotos de este dispositivo.')) return;
+  if(!confirm('Última confirmación: esta acción no se puede deshacer. ¿Ya descargaste tus PDFs?')) return;
+
+  state = defaultState();
+  saveState();
+  await clearPhotos();
+  urlCache.forEach(u => URL.revokeObjectURL(u));
+  urlCache.clear();
+
+  renderList();
+  renderRecuerdos();
+  renderStats();
+  switchTab('lista');
+  toast('Todo borrado');
+}
+
+/* =========================================================
+   NAVEGACIÓN
+   ========================================================= */
+function switchTab(name){
+  $$('#tabs button').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
+  $$('.tab-panel').forEach(p => p.classList.toggle('active', p.id === 'tab-' + name));
+  if(name === 'recuerdos') renderRecuerdos();
+  if(name === 'ajustes') renderStats();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* =========================================================
+   INICIALIZACIÓN
+   ========================================================= */
+function init(){
+  renderFilters();
+  renderList();
+  renderStats();
+
+  $$('#tabs button').forEach(b => {
+    b.addEventListener('click', () => switchTab(b.dataset.tab));
+  });
+
+  $('#surpriseBtn').addEventListener('click', pickRandomAndOpen);
+
+  $('#modalClose').addEventListener('click', closeModal);
+  $('#modal').addEventListener('click', (e) => {
+    if(e.target.id === 'modal') closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape' && !$('#modal').hidden) closeModal();
+  });
+
+  $('#exportBtn').addEventListener('click', exportData);
+  $('#importBtn').addEventListener('click', () => $('#importInput').click());
+  $('#importInput').addEventListener('change', (e) => {
+    const f = e.target.files[0];
+    if(f) importData(f);
+    e.target.value = '';
+  });
+  $('#resetBtn').addEventListener('click', resetAll);
+}
+
+init();
+</script>
+</body>
+</html>
