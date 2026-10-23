@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="theme-color" content="#C75B6B" />
-<title>100 días contigo</title>
-<meta name="description" content="Cien ideas de actividades para parejas. Descubran una al azar y guarden el recuerdo en un PDF." />
+<title>¿Qué hacemos hoy?</title>
+<meta name="description" content="Cien ideas de actividades para parejas. Deja que el azar elija y guarden el recuerdo en un PDF." />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💞</text></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,7 +47,7 @@ textarea{font-family:inherit}
 .hero{
   background:linear-gradient(150deg,#C75B6B 0%,#D96C6C 48%,#E0795C 100%);
   color:#fff;
-  padding:42px 20px 36px;
+  padding:44px 20px 38px;
   position:relative;
   overflow:hidden;
 }
@@ -63,10 +63,10 @@ textarea{font-family:inherit}
   font-size:12px;letter-spacing:.22em;text-transform:uppercase;
   opacity:.85;margin-bottom:10px;font-weight:700;
 }
-.hero h1{font-size:clamp(30px,6.5vw,46px);line-height:1.05;margin-bottom:10px}
-.hero .sub{font-size:clamp(14px,2.4vw,16.5px);opacity:.92;max-width:540px;line-height:1.5}
+.hero h1{font-size:clamp(32px,7vw,50px);line-height:1.02;margin-bottom:12px}
+.hero .sub{font-size:clamp(14px,2.4vw,16.5px);opacity:.94;max-width:560px;line-height:1.55}
 .hero-tag{
-  display:inline-flex;flex-wrap:wrap;gap:8px;margin-top:18px;
+  display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;
 }
 .hero-tag span{
   font-size:12px;font-weight:700;padding:6px 12px;border-radius:99px;
@@ -112,119 +112,63 @@ main{max-width:980px;margin:0 auto;padding:22px 16px 40px}
 .notice .ico{font-size:20px;line-height:1;flex:0 0 auto}
 .notice b{color:#4A3A12}
 
-/* ---------- CARDS / BUTTONS ---------- */
-.card{
-  background:var(--paper);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow-sm);
-  border:1px solid var(--line);
-}
-.surprise-wrap{margin-bottom:18px}
-.surprise-btn{
-  width:100%;padding:20px 22px;font-size:16.5px;border-radius:16px;
-  display:flex;align-items:center;justify-content:center;gap:10px;
-}
-.btn{
-  padding:13px 22px;border-radius:99px;font-weight:700;font-size:14.5px;
-  transition:.18s;display:inline-flex;align-items:center;gap:8px;
-  justify-content:center;
-}
-.btn:active{transform:scale(.97)}
-.btn:disabled{opacity:.6;cursor:default}
-.btn-primary{background:var(--rose);color:#fff;box-shadow:0 8px 20px rgba(199,91,107,.3)}
-.btn-primary:hover:not(:disabled){background:var(--rose-dark)}
-.btn-ghost{background:#fff;color:var(--rose);border:1.5px solid var(--rose-soft)}
-.btn-ghost:hover:not(:disabled){background:var(--rose-soft)}
-.btn-done{background:#E7F0E8;color:#4E7352}
-.btn-done:hover{background:#D6E7D8}
-.btn-flat{background:var(--paper);border:1.5px solid var(--line);color:var(--muted)}
-.btn-flat:hover{border-color:var(--rose-soft);color:var(--rose)}
-.btn-sm{padding:9px 16px;font-size:13px}
-
-.empty{
-  text-align:center;padding:48px 24px;color:var(--muted);
-}
-.empty .emoji{font-size:44px;display:block;margin-bottom:14px}
-.empty p{line-height:1.65;max-width:340px;margin:0 auto 20px;font-size:15px}
-
-/* ---------- LIST ---------- */
-.filters{
-  display:flex;gap:8px;overflow-x:auto;padding:4px 0 14px;
-  scrollbar-width:none;margin-bottom:4px;
-}
-.filters::-webkit-scrollbar{display:none}
-.filters button{
-  flex:0 0 auto;padding:8px 15px;border-radius:99px;font-size:13px;font-weight:700;
-  background:#fff;border:1.5px solid var(--line);color:var(--muted);transition:.16s;
-}
-.filters button:hover{border-color:var(--rose-soft);color:var(--rose)}
-.filters button.active{background:var(--ink);border-color:var(--ink);color:#fff}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:12px}
-.act{
-  background:var(--paper);border:1px solid var(--line);border-radius:16px;
-  padding:16px 16px 14px;text-align:left;transition:.18s;
-  display:flex;flex-direction:column;gap:8px;position:relative;
-  box-shadow:var(--shadow-sm);
-}
-.act:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:var(--rose-soft)}
-.act.done{background:#FBFDFB;border-color:#D8E9DA}
-.act-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
-.act-cat{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--rose)}
-.act-title{font-family:'Fraunces',Georgia,serif;font-size:16.5px;font-weight:700;line-height:1.28;color:var(--ink)}
-.act-desc{font-size:13px;color:var(--muted);line-height:1.5}
-.tick{
-  width:22px;height:22px;border-radius:50%;background:#E7F0E8;color:#4E7352;
-  display:grid;place-items:center;font-size:12px;flex:0 0 auto;
-}
-.note-dot{position:absolute;bottom:12px;right:14px;font-size:12px;opacity:.5}
-
-/* ---------- ROLLING OVERLAY ---------- */
-.rolling{
-  position:fixed;inset:0;z-index:250;
-  background:rgba(44,33,27,.66);
-  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
-  display:grid;place-items:center;padding:24px;
-}
-.rolling[hidden]{display:none}
-.rolling-card{
+/* ---------- MAIN BUTTON SCREEN ---------- */
+.main-card{
   background:var(--paper);
   border-radius:24px;
-  padding:36px 26px 34px;
-  max-width:520px;width:100%;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+  padding:44px 26px 40px;
   text-align:center;
-  box-shadow:0 30px 80px rgba(0,0,0,.35);
   position:relative;
   overflow:hidden;
-  border-top:6px solid var(--rose);
-  animation:fadeIn .2s ease;
 }
-.rolling-card::after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(circle at 50% 0%, rgba(199,91,107,.07), transparent 60%);
+.main-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--rose),var(--terra),var(--gold));
 }
-.rolling-label{
-  font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--rose);font-weight:700;margin-bottom:16px;
+.main-icon{
+  font-size:58px;line-height:1;
+  margin-bottom:16px;
+  display:inline-block;
+  animation:float 3.5s ease-in-out infinite;
 }
-.roll-cat{
-  display:inline-block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
-  font-weight:700;color:var(--rose-dark);margin-bottom:12px;
-  background:var(--rose-soft);padding:5px 13px;border-radius:99px;
-  min-height:24px;
+@keyframes float{
+  0%,100%{transform:translateY(0) rotate(-4deg)}
+  50%{transform:translateY(-8px) rotate(4deg)}
 }
-.roll-title{
-  font-size:clamp(22px,5vw,31px);line-height:1.15;
-  min-height:2.4em;
-  display:flex;align-items:center;justify-content:center;
-  transition:transform .15s ease;
-  color:var(--ink);
+.main-card h2{
+  font-size:clamp(24px,5vw,34px);
+  line-height:1.15;
+  margin-bottom:14px;
 }
-.roll-title.pop{animation:popIn .6s cubic-bezier(.22,1.4,.36,1);color:var(--rose)}
-@keyframes popIn{
-  0%{transform:scale(.82)}
-  55%{transform:scale(1.09)}
-  100%{transform:scale(1)}
+.main-card .main-desc{
+  color:var(--muted);
+  line-height:1.65;
+  font-size:15.5px;
+  max-width:480px;
+  margin:0 auto 28px;
+}
+.surprise-btn{
+  padding:22px 38px;
+  font-size:18px;
+  border-radius:99px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  box-shadow:0 14px 34px rgba(199,91,107,.4);
+  transition:transform .18s, box-shadow .18s, background .18s;
+}
+.surprise-btn:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(199,91,107,.5)}
+.surprise-btn:active{transform:scale(.97)}
+.surprise-btn .dice{font-size:22px;display:inline-block;animation:spin 6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.main-foot{
+  margin-top:26px;
+  font-size:12.5px;
+  color:var(--muted);
+  line-height:1.6;
 }
 
 /* ---------- MODAL ---------- */
@@ -240,7 +184,7 @@ main{max-width:980px;margin:0 auto;padding:22px 16px 40px}
 .modal[hidden]{display:none}
 .modal-card{
   background:var(--cream);width:100%;max-width:600px;
-  max-height:92vh;overflow-y:auto;
+  max-height:92vh;overflow-y:auto;-webkit-overflow-scrolling:touch;
   border-radius:24px 24px 0 0;
   padding:26px 20px 34px;position:relative;
   animation:slideUp .3s cubic-bezier(.22,1,.36,1);
@@ -248,9 +192,9 @@ main{max-width:980px;margin:0 auto;padding:22px 16px 40px}
 @media(min-width:700px){.modal-card{border-radius:24px;padding:32px 30px}}
 @keyframes slideUp{from{transform:translateY(30px);opacity:.6}to{transform:none;opacity:1}}
 .modal-close{
-  position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;
+  position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;
   background:#fff;border:1px solid var(--line);color:var(--muted);
-  font-size:15px;display:grid;place-items:center;box-shadow:var(--shadow-sm);
+  font-size:16px;display:grid;place-items:center;box-shadow:var(--shadow-sm);
   z-index:2;
 }
 .modal-close:hover{color:var(--rose);border-color:var(--rose-soft)}
@@ -259,8 +203,8 @@ main{max-width:980px;margin:0 auto;padding:22px 16px 40px}
   display:inline-block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
   font-weight:700;color:var(--rose);margin-bottom:10px;
 }
-.detail h2{font-size:clamp(22px,4.6vw,29px);line-height:1.15;margin-bottom:10px;padding-right:36px}
-.detail .detail-desc{color:var(--muted);line-height:1.65;font-size:15px;margin-bottom:14px}
+.detail h2{font-size:clamp(22px,4.8vw,30px);line-height:1.15;margin-bottom:12px;padding-right:36px}
+.detail .detail-desc{color:#5A4D45;line-height:1.7;font-size:15px;margin-bottom:18px}
 .block{margin-top:26px}
 .block h3{font-size:17px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
 .count{
@@ -299,17 +243,100 @@ main{max-width:980px;margin:0 auto;padding:22px 16px 40px}
 .photo-item:hover .photo-del,.photo-item:focus-within .photo-del{opacity:1}
 @media(hover:none){.photo-del{opacity:.92}}
 
+/* Etiqueta para input file — funciona mejor en iOS */
+.photo-label{
+  cursor:pointer;position:relative;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.photo-label input[type="file"]{
+  position:absolute;left:-9999px;top:0;
+  width:1px;height:1px;opacity:0;
+  font-size:0;
+}
+
+.btn{
+  padding:13px 22px;border-radius:99px;font-weight:700;font-size:14.5px;
+  transition:.18s;display:inline-flex;align-items:center;gap:8px;
+  justify-content:center;
+}
+.btn:active{transform:scale(.97)}
+.btn:disabled{opacity:.6;cursor:default}
+.btn-primary{background:var(--rose);color:#fff;box-shadow:0 8px 20px rgba(199,91,107,.3)}
+.btn-primary:hover:not(:disabled){background:var(--rose-dark)}
+.btn-ghost{background:#fff;color:var(--rose);border:1.5px solid var(--rose-soft)}
+.btn-ghost:hover:not(:disabled){background:var(--rose-soft)}
+.btn-done{background:#E7F0E8;color:#4E7352}
+.btn-done:hover{background:#D6E7D8}
+.btn-flat{background:var(--paper);border:1.5px solid var(--line);color:var(--muted)}
+.btn-flat:hover{border-color:var(--rose-soft);color:var(--rose)}
+.btn-sm{padding:9px 16px;font-size:13px}
+
 .pdf-block{margin-top:28px}
 .pdf-block .btn{width:100%;padding:16px 22px;font-size:15px}
+
+.empty{
+  text-align:center;padding:48px 24px;color:var(--muted);
+}
+.empty .emoji{font-size:44px;display:block;margin-bottom:14px}
+.empty p{line-height:1.65;max-width:340px;margin:0 auto 20px;font-size:15px}
+
+/* ---------- ROLLING OVERLAY ---------- */
+.rolling{
+  position:fixed;inset:0;z-index:250;
+  background:rgba(44,33,27,.72);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  display:grid;place-items:center;padding:24px;
+}
+.rolling[hidden]{display:none}
+.rolling-card{
+  background:var(--paper);
+  border-radius:24px;
+  padding:40px 26px 38px;
+  max-width:520px;width:100%;
+  text-align:center;
+  box-shadow:0 30px 80px rgba(0,0,0,.4);
+  position:relative;
+  overflow:hidden;
+  border-top:6px solid var(--rose);
+  animation:fadeIn .2s ease;
+}
+.rolling-card::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 50% 0%, rgba(199,91,107,.08), transparent 60%);
+}
+.rolling-label{
+  font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--rose);font-weight:700;margin-bottom:18px;
+}
+.roll-cat{
+  display:inline-block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:700;color:var(--rose-dark);margin-bottom:14px;
+  background:var(--rose-soft);padding:5px 13px;border-radius:99px;
+  min-height:24px;
+}
+.roll-title{
+  font-size:clamp(22px,5.2vw,32px);line-height:1.15;
+  min-height:2.6em;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .15s ease;
+  color:var(--ink);
+}
+.roll-title.pop{animation:popIn .6s cubic-bezier(.22,1.4,.36,1);color:var(--rose)}
+@keyframes popIn{
+  0%{transform:scale(.8)}
+  55%{transform:scale(1.1)}
+  100%{transform:scale(1)}
+}
 
 /* ---------- RECUERDOS ---------- */
 .rec-group{margin-bottom:26px}
 .rec-head{
   display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap;
 }
-.rec-head h3{font-size:17px}
+.rec-head h3{font-size:17px;cursor:pointer;transition:.16s}
+.rec-head h3:hover{color:var(--rose)}
 .rec-head span{font-size:12.5px;color:var(--muted);font-weight:700}
-.rec-pdf{margin-left:auto}
+.rec-actions{margin-left:auto;display:flex;gap:6px}
 .rec-photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-bottom:10px}
 .rec-photo{aspect-ratio:1;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#eee}
 .rec-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:.3s}
@@ -324,10 +351,16 @@ main{max-width:980px;margin:0 auto;padding:22px 16px 40px}
 .setting{
   display:flex;justify-content:space-between;align-items:center;gap:16px;
   padding:18px;border-bottom:1px solid var(--line);
+  background:#fff;
 }
-.setting:last-child{border-bottom:none}
+.setting:first-child{border-radius:var(--radius) var(--radius) 0 0}
+.setting:last-child{border-bottom:none;border-radius:0 0 var(--radius) var(--radius)}
 .setting h4{font-size:15.5px;margin-bottom:4px;font-family:'Karla',sans-serif;font-weight:700}
 .setting p{font-size:13px;color:var(--muted);line-height:1.5;max-width:340px}
+.settings-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow-sm);
+}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
 .stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;text-align:center}
 .stat b{display:block;font-family:'Fraunces',serif;font-size:26px;color:var(--rose)}
@@ -339,7 +372,7 @@ main{max-width:980px;margin:0 auto;padding:22px 16px 40px}
   background:var(--ink);color:#fff;padding:13px 22px;border-radius:99px;
   font-size:14px;font-weight:700;z-index:300;box-shadow:0 12px 30px rgba(0,0,0,.25);
   transition:transform .35s cubic-bezier(.22,1,.36,1);pointer-events:none;
-  max-width:90vw;text-align:center;
+  max-width:90vw;text-align:center;line-height:1.4;
 }
 .toast.show{transform:translate(-50%,0)}
 
@@ -354,8 +387,8 @@ main{max-width:980px;margin:0 auto;padding:22px 16px 40px}
 <header class="hero">
   <div class="hero-inner">
     <p class="eyebrow">Un reto para dos</p>
-    <h1>100 días contigo</h1>
-    <p class="sub">Cien ideas para dejar de preguntar «¿y hoy qué hacemos?». Dejen que el azar elija, vivan el momento y descarguen el recuerdo en PDF.</p>
+    <h1>¿Qué hacemos hoy?</h1>
+    <p class="sub">Cien ideas para dejar de preguntar «¿y hoy qué hacemos?». Deja que el azar elija, vivan el momento y descarguen el recuerdo en PDF.</p>
     <div class="hero-tag">
       <span>🎲 Una al azar</span>
       <span>📝 Notas</span>
@@ -366,29 +399,27 @@ main{max-width:980px;margin:0 auto;padding:22px 16px 40px}
 </header>
 
 <nav class="tabs" id="tabs">
-  <button data-tab="lista" class="active">Las 100</button>
+  <button data-tab="inicio" class="active">Inicio</button>
   <button data-tab="recuerdos">Recuerdos</button>
   <button data-tab="ajustes">Ajustes</button>
 </nav>
 
 <main>
-  <!-- LISTA -->
-  <section class="tab-panel active" id="tab-lista">
+  <!-- INICIO -->
+  <section class="tab-panel active" id="tab-inicio">
     <div class="notice">
       <span class="ico">💾</span>
       <p><b>Tus recuerdos viven solo en este dispositivo.</b> No se guardan en ningún servidor. Si borras los datos del navegador, cambias de equipo o usas modo incógnito, se perderán. <b>Descarga el PDF al terminar cada actividad.</b></p>
     </div>
 
-    <div class="surprise-wrap">
-      <button class="btn btn-primary surprise-btn" id="surpriseBtn">🎲 Sorpréndenos</button>
-      <p class="hint" style="text-align:center;margin-top:8px">Una actividad al azar, con todos sus detalles.</p>
-    </div>
-
-    <div class="filters" id="filters"></div>
-    <div class="grid" id="listGrid"></div>
-    <div class="empty" id="listEmpty" hidden>
-      <span class="emoji">🔍</span>
-      <p>No hay actividades en esa categoría.</p>
+    <div class="main-card">
+      <div class="main-icon">🎲</div>
+      <h2>¿Y hoy qué hacemos?</h2>
+      <p class="main-desc">Presiona el botón y deja que el azar elija una de las 100 actividades. Después podrás escribir tus notas, subir fotos y descargar el recuerdo completo en PDF.</p>
+      <button class="surprise-btn btn btn-primary" id="surpriseBtn">
+        <span class="dice">🎲</span> Sorpréndenos
+      </button>
+      <p class="main-foot">Cada vez que presiones, la app elegirá una actividad distinta.</p>
     </div>
   </section>
 
@@ -407,14 +438,14 @@ main{max-width:980px;margin:0 auto;padding:22px 16px 40px}
 
     <div class="notice" style="margin-bottom:18px">
       <span class="ico">📄</span>
-      <p><b>El PDF es tu respaldo permanente.</b> Las notas y fotos de esta app se guardan solo en tu navegador y pueden desaparecer. Descarga el PDF de cada actividad al terminarla y guárdalo donde no se borre.</p>
+      <p><b>El PDF es tu respaldo permanente.</b> Las notas y fotos se guardan solo en tu navegador y pueden desaparecer. Descarga el PDF de cada actividad al terminarla y guárdalo donde no se borre.</p>
     </div>
 
-    <div class="card">
+    <div class="settings-card">
       <div class="setting">
         <div>
           <h4>Exportar todos los recuerdos</h4>
-          <p>Descarga un archivo JSON con sus notas, progreso y fotos. Útil para mover todo a otro dispositivo.</p>
+          <p>Descarga un archivo JSON con notas, progreso y fotos. Útil para mover todo a otro dispositivo.</p>
         </div>
         <button class="btn btn-ghost btn-sm" id="exportBtn">Exportar</button>
       </div>
@@ -424,7 +455,7 @@ main{max-width:980px;margin:0 auto;padding:22px 16px 40px}
           <p>Restaura un archivo exportado antes. Se reemplazará todo lo actual.</p>
         </div>
         <button class="btn btn-ghost btn-sm" id="importBtn">Importar</button>
-        <input type="file" id="importInput" accept="application/json,.json" hidden>
+        <input type="file" id="importInput" accept="application/json,.json" style="position:absolute;left:-9999px;opacity:0;width:1px;height:1px">
       </div>
       <div class="setting">
         <div>
@@ -436,7 +467,7 @@ main{max-width:980px;margin:0 auto;padding:22px 16px 40px}
     </div>
 
     <p class="hint" style="margin-top:18px;text-align:center">
-      Todos sus datos se guardan <b>solo en este dispositivo</b> (en el navegador). Nadie más los ve.
+      Todos sus datos se guardan <b>solo en este dispositivo</b>. Nadie más los ve.
     </p>
   </section>
 </main>
@@ -464,128 +495,128 @@ main{max-width:980px;margin:0 auto;padding:22px 16px 40px}
 
 <script>
 /* =========================================================
-   100 ACTIVIDADES
+   LAS 100 ACTIVIDADES (descripciones ampliadas)
    ========================================================= */
 const ACTIVITIES = [
   /* --- EN CASA --- */
-  {id:1,  t:"Noche de cine temática", c:"En casa", d:"Elijan un país, vean una película de ahí y cocinen algo típico para acompañar. Sin celulares durante la peli."},
-  {id:2,  t:"Maratón de series con reglas", c:"En casa", d:"Tres capítulos cada uno elige uno. El que pierde el turno prepara las palomitas."},
-  {id:3,  t:"Noche de juegos de mesa", c:"En casa", d:"Saca esos juegos que nunca abren. Apuesta algo divertido: el que pierde hace el desayuno mañana."},
-  {id:4,  t:"Karaoke en casa", c:"En casa", d:"Cierren las cortinas, suban el volumen y canten desafinados sin vergüenza. La playlist la arma cada uno para el otro."},
-  {id:5,  t:"Fuerte de cobijas y pelis", c:"En casa", d:"Construyan el fuerte más épico de la sala con sillas, sábanas y cojines. Adentro: peli y algo rico."},
-  {id:6,  t:"Cena a la luz de velas", c:"En casa", d:"Sin luces, solo velas. Vístanse como si fueran a un restaurante caro y cocinen (o pidan) algo especial."},
-  {id:7,  t:"Spa casero", c:"En casa", d:"Aceites, música suave, antifaz y turnos de masaje. Uno cuida al otro durante 30 minutos y luego cambian."},
-  {id:8,  t:"Bailar en la sala a medianoche", c:"En casa", d:"Pongan tres canciones que les recuerden algo y bailen descalzos. Sin coreografía, sin público."},
-  {id:9,  t:"Ver el amanecer juntos", c:"En casa", d:"Alarma temprano, café caliente y una ventana o el techo. El silencio también es una cita."},
-  {id:10, t:"Las 36 preguntas", c:"En casa", d:"Busquen «las 36 preguntas para enamorarse» y respóndanlas en voz alta. Van a descubrir algo nuevo."},
-  {id:11, t:"Tres horas sin celular", c:"En casa", d:"Dejen los teléfonos en un cajón. Charlemos, cocinemos, juguemos. Noten lo que pasa."},
-  {id:12, t:"Rompecabezas con música", c:"En casa", d:"Compren un rompecabezas de 500+ piezas, pongan un disco viejo y termínenlo (o intenten)."},
-  {id:13, t:"Trivia: ¿cuánto se conocen?", c:"En casa", d:"Cada uno escribe 10 preguntas sobre sí mismo. Se turnan para responder. Anoten los resultados."},
-  {id:14, t:"Noche de pelis de terror", c:"En casa", d:"Una peli de miedo, todas las luces apagadas y una cobija compartida. Los sustos se disfrutan mejor acompañado."},
-  {id:89, t:"Adoptar una planta", c:"En casa", d:"Vayan a comprar una planta juntos, pónganle nombre y decidan quién la riega qué día. Es un proyecto de dos."},
-  {id:94, t:"Noche de chistes y memes", c:"En casa", d:"Pasen el celular durante una hora mostrando solo cosas que los hagan reír. Prohibido contenido serio."},
-  {id:95, t:"Fotos viejas: recordar", c:"En casa", d:"Abran el carrete y cuenten la historia detrás de cada foto. ¿Cuál es la primera que se tomaron juntos?"},
-  {id:96, t:"21 preguntas", c:"En casa", d:"Uno piensa en algo (un lugar, un objeto, una persona) y el otro adivina con 21 preguntas de sí o no."},
-  {id:99, t:"Escondidas y retos en casa", c:"En casa", d:"Escondidas de adultos, o mejor: una lista de retos ridículos (hablar en acento 20 min, imitar al otro)."},
+  {id:1, t:"Noche de cine temática", c:"En casa", d:"Elijan un país que les intrigue —México, Italia, Japón, Francia—, busquen una película representativa y cocinen un plato típico para acompañar. Decoren con lo que tengan a mano, apaguen las luces y silencien los celulares durante toda la peli. Al terminar, comenten qué los sorprendió y qué se llevan de esa cultura. Un viaje completo sin salir de casa."},
+  {id:2, t:"Maratón de series con reglas", c:"En casa", d:"Elijan una serie que ninguno haya visto y armen la regla del juego: tres capítulos seguidos y cada uno elige uno de los suyos. El que pierda la apuesta del capítulo prepara las palomitas o paga la próxima cena. A media temporada, hagan un descanso de quince minutos para comentar teorías. Que el maratón tenga su propio ritual."},
+  {id:3, t:"Noche de juegos de mesa", c:"En casa", d:"Rescaten esos juegos que llevan meses en el armario. Apuesten algo divertido: el perdedor hace el desayuno del domingo, lava los platos o paga el postre. Si tienen varios, armen un mini torneo de tres rondas. La regla es reírse de las derrotas y presumir las victorias. Al final, elijan su juego favorito de la noche y prometan repetirlo."},
+  {id:4, t:"Karaoke en casa", c:"En casa", d:"Cierren las cortinas, suban el volumen y olvídense de la vergüenza. Cada uno arma una playlist de cinco canciones para el otro, incluyendo una «obligada» que solo el otro conozca. Canten descalzos, con cucharas de micrófono, y marquen puntos por desafine y drama. El aplauso final es obligatorio, aunque sea imaginario."},
+  {id:5, t:"Fuerte de cobijas y pelis", c:"En casa", d:"Saquen todas las sillas, sábanas, cojines y almohadas que tengan. Construyan el fuerte más épico de la sala o de la cama, con entrada secreta y todo. Adentro: una peli elegida entre los dos, palomitas, cobijas y cero celulares. Si el fuerte se cae a la mitad, se reconstruye: es parte de la aventura."},
+  {id:6, t:"Cena a la luz de velas", c:"En casa", d:"Apaguen todas las luces y enciendan velas (sirven hasta las de cumpleaños). Vístanse como si fueran a un restaurante caro: camisa, vestido, perfume. Cocinen algo especial entre los dos o pidan su comida favorita. Hablen de algo distinto a la rutina: un sueño, una anécdota de la infancia, un plan a futuro. La penumbra hace que todo se sienta distinto."},
+  {id:7, t:"Spa casero", c:"En casa", d:"Aceites, música suave, antifaz y toallas limpias. Preparen dos estaciones de masaje y turnos de treinta minutos cada uno: uno recibe, el otro cuida. Sin pantallas, sin interrupciones. Al final, un té caliente y una conversación lenta. Es un lujo que no cuesta mucho y dura en la memoria."},
+  {id:8, t:"Bailar en la sala a medianoche", c:"En casa", d:"Elijan tres canciones que les recuerden algo: la primera que bailaron, la de un viaje, la que suena en las bodas. Suban el volumen, apaguen las luces grandes y bailen descalzos en la sala. Sin coreografía, sin público, sin vergüenza. La última canción báilenla lento, bien cerca. Repetirlo cada tanto no tiene precio."},
+  {id:9, t:"Ver el amanecer juntos", c:"En casa", d:"Suena la alarma temprano, pero vale la pena. Preparen café o té caliente, tomen una cobija y busquen una ventana, el techo o un parque cercano. Siéntense juntos a ver cómo cambia el cielo. El silencio también es una cita. Lleven algo para anotar lo primero que piensen al ver salir el sol."},
+  {id:10, t:"Las 36 preguntas", c:"En casa", d:"Busquen en línea «las 36 preguntas para enamorarse» (del psicólogo Arthur Aron). Siéntense frente a frente, sin pantallas, y respóndanlas en voz alta, una por una, sin prisa. Algunas darán risa, otras tocarán fibras. No se salten ninguna. Al final, guárdenlas por escrito para releerlas dentro de un año."},
+  {id:11, t:"Tres horas sin celular", c:"En casa", d:"Dejen los teléfonos en un cajón o en otra habitación, en silencio. Durante tres horas, háganlo todo como si no existieran: cocinen, lean, jueguen, caminen, charlen. Noten qué pasa: la ansiedad inicial, la calma después, las conversaciones que aparecen. Al final, comenten cómo se sintió. Un experimento que vale repetir."},
+  {id:12, t:"Rompecabezas con música", c:"En casa", d:"Compren un rompecabezas de 500 o 1000 piezas (o usen uno viejo). Pongan un disco completo de principio a fin, sin saltar canciones: un clásico, un disco de su juventud, algo que los haga cantar. Armen el rompecabezas entre los dos, turnándose las piezas, y celebren cada borde terminado. Si no lo acaban hoy, queda pendiente para la próxima."},
+  {id:13, t:"Trivia: ¿cuánto se conocen?", c:"En casa", d:"Cada uno escribe en secreto diez preguntas sobre sí mismo: su comida favorita, su miedo más raro, la canción que lo hace llorar, la primera impresión del otro. Se turnan para preguntar y responder. Anoten los aciertos. Al final, cuenten qué respuesta los sorprendió más. Un juego que revela detalles que la rutina tapa."},
+  {id:14, t:"Noche de pelis de terror", c:"En casa", d:"Elijan una peli de miedo, apaguen todas las luces y compartan una cobija grande. Palomitas, bebida y pacto de no mirar el celular. Los sustos se disfrutan mejor acompañado. Si alguien no aguanta, se vale gritar. Al terminar, dejen una luz encendida y cuenten cuál escena los asustó más. Después, duerman con la puerta entreabierta."},
+  {id:89, t:"Adoptar una planta", c:"En casa", d:"Vayan juntos a un vivero o mercado y elijan una planta que les guste a los dos. Pónganle un nombre (en serio, funciona), decidan quién la riega qué días y en qué rincón vive. Es su primer proyecto vivo de pareja. Tomen una foto el día que la adoptan y otra en un mes. La planta crece como crece la relación."},
+  {id:94, t:"Noche de chistes y memes", c:"En casa", d:"Una hora entera, cada uno muestra al otro lo más gracioso que tenga guardado: memes, videos, chistes, stickers. Prohibido contenido serio. El objetivo es reírse hasta que duela el abdomen. Al final, guarden el que más los hizo reír para su cápsula del tiempo. Las parejas que ríen juntas duran más."},
+  {id:95, t:"Fotos viejas: recordar", c:"En casa", d:"Abran el carrete del celular o una caja de fotos impresas. Cuenten la historia detrás de cada una: dónde fue, quién la tomó, qué pasaba ese día. Busquen la primera foto que se tomaron juntos. ¿Cuánto ha cambiado todo? ¿Qué sigue igual? Al final, elijan la foto que más los representa y guárdenla como recuerdo."},
+  {id:96, t:"21 preguntas", c:"En casa", d:"Uno piensa en algo: un lugar, un objeto, una persona, una película. El otro tiene veintiún preguntas de sí o no para adivinarlo. Anoten las preguntas que más acercaron y las que despistaron. Jueguen varias rondas, cambiando de tema. Es un juego simple que se vuelve adictivo después de la primera partida."},
+  {id:99, t:"Escondidas y retos en casa", c:"En casa", d:"Escondidas de adultos: uno cuenta hasta treinta, el otro se esconde en algún rincón de la casa. Después, cambian. Si se aburren, armen una lista de retos ridículos: hablar con acento veinte minutos, imitar al otro, cocinar con los ojos vendados. La risa es el objetivo. No se vale herir susceptibilidades."},
 
   /* --- COCINA --- */
-  {id:15, t:"Receta de otro país", c:"Cocina", d:"Elijan un país que ninguno haya visitado y cocinen su plato más famoso. Coman en el piso si quieren."},
-  {id:16, t:"Pizza casera desde cero", c:"Cocina", d:"Masa hecha en casa, cada uno diseña su mitad con lo que quiera. El horno dirá quién gana."},
-  {id:17, t:"Postre juntos", c:"Cocina", d:"Algo dulce, simple y compartido. Regla: no se vale probar la mezcla antes de que esté lista (bueno, un poquito sí)."},
-  {id:18, t:"Desayuno sorpresa en la cama", c:"Cocina", d:"Uno se levanta primero y prepara todo. El otro desayuna sin saber qué viene. Al día siguiente, cambian."},
-  {id:19, t:"Sushi en casa", c:"Cocina", d:"Arroz, alga y todos los rellenos posibles. Se vale hacer rolls deformes. Se comen igual."},
-  {id:20, t:"Noche de tacos armados", c:"Cocina", d:"Pongan la mesa con todo: tortillas, salsas, carnes, verduras. Cada uno arma su combinación ganadora."},
-  {id:21, t:"Pan casero", c:"Cocina", d:"Amasar es terapéutico. Mientras leva el pan, hagan algo juntos. Coman el resultado calientito con mantequilla."},
-  {id:22, t:"Reto de licuados", c:"Cocina", d:"Cada uno hace un licuado con 3 ingredientes al azar de la nevera. El otro califica del 1 al 10."},
-  {id:23, t:"MasterChef con lo que hay", c:"Cocina", d:"Abran la nevera y la alacena: solo con eso, cada uno prepara un plato. El otro es el jurado."},
-  {id:24, t:"Chocolates o bombones", c:"Cocina", d:"Derritan chocolate, sumerjan frutas, nueces, galletas. Déjenlos enfriar mientras ven algo. Regalo listo."},
-  {id:25, t:"Cata en casa", c:"Cocina", d:"Café, cerveza, vino o chocolate: compren 3 variedades, prueben a ciegas y adivinen cuál es cuál."},
-  {id:26, t:"Cocinar con presupuesto fijo", c:"Cocina", d:"Vayan al súper con un monto cerrado y compren solo con eso. Cocinen lo que salga y véanlo como un desafío."},
-  {id:97, t:"Cocinar para alguien más", c:"Cocina", d:"Preparen un plato y llévenselo a un vecino, a un familiar o a alguien que lo necesite. Cocinar para otros une."},
+  {id:15, t:"Receta de otro país", c:"Cocina", d:"Elijan un país que ninguno haya visitado —Marruecos, Tailandia, Grecia, Perú—. Busquen su plato más famoso y cocínenlo juntos desde cero, siguiendo la receta paso a paso. Coman en el piso si quieren, con música de ese país de fondo. Al final, comenten qué les gustó y qué no. Un viaje sin avión, pero con sabor."},
+  {id:16, t:"Pizza casera desde cero", c:"Cocina", d:"Hagan la masa en casa con tiempo: harina, agua, levadura y sal. Mientras leva, preparen los toppings: cada uno diseña su mitad con lo que quiera. El horno dirá quién gana el título de mejor pizza. Se vale probar la salsa antes. Al final, corten, compartan y coman con las manos. La pizza sabe mejor cuando se hace en equipo."},
+  {id:17, t:"Postre juntos", c:"Cocina", d:"Elijan algo dulce, simple y compartido: galletas, brownies, un flan, una tarta. Regla de oro: no se vale probar la mezcla antes de que esté lista (bueno, un poquito sí). Cocinen entre los dos, turnándose las tareas. Mientras se hornea o enfría, hagan algo juntos: leer, bailar, ver un capítulo. Al final, coman el postre sin culpa."},
+  {id:18, t:"Desayuno sorpresa en la cama", c:"Cocina", d:"Uno se levanta primero, sin despertar al otro, y prepara el desayuno completo: café, tostadas, fruta, lo que haya. Lo lleva a la cama con una nota o un mensaje bonito. El otro desayuna sin saber qué viene. Al día siguiente, cambian los papeles. Un detalle pequeño que cambia el tono del día entero."},
+  {id:19, t:"Sushi en casa", c:"Cocina", d:"Compren arroz para sushi, alga nori y todos los rellenos posibles: salmón, aguacate, pepino, zanahoria, queso crema. Preparen el arroz con calma, que es la clave. Armen los rolls entre los dos, turnándose para enrollar. Se vale hacer rolls deformes: se comen igual. Al final, cada uno prueba el del otro y califica del uno al diez."},
+  {id:20, t:"Noche de tacos armados", c:"Cocina", d:"Pongan la mesa con todo: tortillas de maíz y de harina, salsas, carnes, verduras, limones, cilantro. Cada uno arma su combinación ganadora. Prueben al menos una combinación que nunca hayan probado. Después, voten por el mejor taco de la noche. Si hay sobras, guárdenlas para el día siguiente: los tacos saben mejor al otro día."},
+  {id:21, t:"Pan casero", c:"Cocina", d:"Amasar es terapéutico: harina, agua, levadura, sal y tiempo. Hagan el pan juntos, turnándose para amasar. Mientras leva, hagan algo tranquilo: lean, vean una serie, ordenen. Cuando esté listo, hornéenlo y cómanlo calientito con mantequilla o aceite de oliva. El olor a pan recién hecho llena la casa de una manera especial. Anoten la receta para repetirla."},
+  {id:22, t:"Reto de licuados", c:"Cocina", d:"Abran la nevera y elijan tres ingredientes al azar (que no sean incompatibles). Cada uno hace un licuado con esos tres ingredientes más lo que quiera agregar. El otro califica del uno al diez y adivina qué lleva. El que pierda prepara el siguiente. Un juego rápido, divertido y lleno de vitaminas."},
+  {id:23, t:"MasterChef con lo que hay", c:"Cocina", d:"Abran la nevera y la alacena: solo con eso, cada uno prepara un plato, sin ir a comprar. Tienen cuarenta y cinco minutos. El otro es el jurado y califica presentación, sabor y creatividad. El ganador elige la próxima peli. Un reto que demuestra que la creatividad no necesita presupuesto."},
+  {id:24, t:"Chocolates o bombones", c:"Cocina", d:"Derritan chocolate a baño maría y sumerjan frutas, nueces, galletas o malvaviscos. Pongan los bombones en una bandeja con papel encerado y déjenlos enfriar en el refrigerador. Mientras esperan, vean algo o conversen. Al final, empaquen algunos para regalar. Un dulce hecho a mano dice más que uno comprado."},
+  {id:25, t:"Cata en casa", c:"Cocina", d:"Elijan algo que se pueda catar: café, cerveza, vino, chocolate o té. Compren tres variedades distintas (no hace falta que sean caras). Prueben a ciegas, sin ver la etiqueta, y adivinen cuál es cuál. Anoten impresiones: aroma, sabor, textura. Al final, coronen su favorito. Un juego que entrena el paladar y la complicidad."},
+  {id:26, t:"Cocinar con presupuesto fijo", c:"Cocina", d:"Vayan al súper con un monto cerrado, lo que decidan. Compren solo con eso, sin trampas. Cocinen lo que salga y véanlo como un desafío de creatividad. El resultado puede sorprender. Al final, comenten qué harían distinto. Una forma divertida de valorar lo que se tiene y de trabajar en equipo."},
+  {id:97, t:"Cocinar para alguien más", c:"Cocina", d:"Preparen un plato y llévenselo a un vecino, a un familiar, a alguien que lo necesite. Cocinar para otros une: es una excusa para salir de la rutina y compartir. Si no conocen a nadie que lo necesite, ofrezcan cocinar para un amigo. La generosidad también es un plan de pareja, y deja un recuerdo bonito en quien lo recibe."},
 
   /* --- ROMÁNTICO --- */
-  {id:27, t:"Cartas de amor a mano", c:"Romántico", d:"Papel y lápiz. Escríbanse una carta sin pensar demasiado. Guárdenla para leerla dentro de un año."},
-  {id:28, t:"Votos simbólicos en casa", c:"Romántico", d:"Escriban sus propias promesas de pareja, léanlas en voz alta y celébrenlo con un brindis."},
-  {id:29, t:"Sesión de fotos en pareja", c:"Romántico", d:"Elijan un lugar bonito (o su casa), usen el temporizador y tómense fotos de verdad, no solo selfies."},
-  {id:30, t:"Masaje de 20 minutos", c:"Romántico", d:"Veinte minutos cada uno, cronómetro en mano. Sin pantallas, sin interrupciones."},
-  {id:31, t:"Cita con dress code", c:"Romántico", d:"Arréglense como para una ocasión especial… y quédense en casa. La ropa bonita cambia la energía."},
-  {id:32, t:"Su película favorita del otro", c:"Romántico", d:"Vean la peli favorita de tu pareja sin quejarse ni una vez. Después expliquen por qué les gusta tanto."},
-  {id:33, t:"La primera impresión", c:"Romántico", d:"Cuéntenle al otro qué pensaron la primera vez que lo vieron y qué les llamó la atención."},
-  {id:34, t:"Baile lento en la cocina", c:"Romántico", d:"Una canción. Solo una. Pero báilenla como si fuera la última. Sin bromas."},
-  {id:35, t:"100 razones por las que te amo", c:"Romántico", d:"Cada uno escribe su lista. No tienen que llegar a 100, pero entre los dos sí. Léanlas después."},
-  {id:36, t:"Recrear su primera cita", c:"Romántico", d:"Vuelvan al lugar, pidan lo mismo, recuerden cómo se sentían. ¿Qué cambió y qué sigue igual?"},
-  {id:37, t:"Helado y caminata", c:"Romántico", d:"Un helado cada uno, una caminata sin destino fijo y una conversación sin tema obligado."},
-  {id:38, t:"Intercambiar roles por un día", c:"Romántico", d:"Cada uno hace las tareas del otro durante un día. Es la mejor forma de entender su día a día."},
-  {id:100,t:"Renovar promesas", c:"Romántico", d:"Escriban una carta sobre lo que quieren construir juntos de aquí en adelante. Guárdenla como cierre del reto."},
+  {id:27, t:"Cartas de amor a mano", c:"Romántico", d:"Papel y lápiz, sin pantallas. Escríbanse una carta sin pensar demasiado: lo primero que salga. Cuéntenle al otro algo que nunca le hayan dicho, un miedo, un sueño, una anécdota de cuando se conocieron. Guárdenla en un sobre cerrado y pónganle fecha para abrirla dentro de un año. Una cápsula de amor en papel, hecha a mano."},
+  {id:28, t:"Votos simbólicos en casa", c:"Romántico", d:"Escriban sus propias promesas de pareja: qué quieren construir, qué no quieren perder, cómo quieren tratarse. Léanlas en voz alta, uno frente al otro, tomados de la mano. Celébrenlo con un brindis, lo que sea: jugo, agua, vino. Guarden el papel en un lugar especial. Una ceremonia íntima sin invitados ni protocolo."},
+  {id:29, t:"Sesión de fotos en pareja", c:"Romántico", d:"Elijan un lugar bonito —un parque, su casa, una calle con historia—, usen el temporizador y tómense fotos de verdad: de cerca, de lejos, riéndose, en silencio. No solo selfies: usen una pared, una banca, una ventana. Al final, elijan la mejor de cada uno y guárdenla como recuerdo. La foto favorita puede ser la más inesperada."},
+  {id:30, t:"Masaje de 20 minutos", c:"Romántico", d:"Veinte minutos cada uno, cronómetro en mano. Aceite o crema, música suave y cero pantallas. Uno recibe, el otro cuida. Concéntrense en la espalda, los hombros, las manos. Después, cambian los papeles. Al final, quédense un rato en silencio, sintiendo el cuerpo relajado. Un plan simple que vale oro."},
+  {id:31, t:"Cita con dress code", c:"Romántico", d:"Arréglense como para una ocasión especial: camisa, vestido, perfume, lo que los haga sentir bien. Pero quédense en casa. Cenen a la luz de las velas, bailen una canción, tómense una foto elegante. La ropa bonita cambia la energía y la forma de mirarse. Sin salir, pero como si fuera la primera cita."},
+  {id:32, t:"Su película favorita del otro", c:"Romántico", d:"Vean la peli favorita de tu pareja sin quejarse ni una sola vez. Pregunten antes por qué le gusta tanto, qué recuerda de ella, qué personaje es su favorito. Mientras la ven, noten esos detalles. Al final, comenten qué entendieron del otro a través de la peli. Un ejercicio de empatía disfrazado de cine."},
+  {id:33, t:"La primera impresión", c:"Romántico", d:"Cuéntenle al otro qué pensaron la primera vez que lo vieron: dónde fue, qué llevaba puesto, qué les llamó la atención, qué sintieron. Sean honestos y tiernos. Después, el otro cuenta su versión. Descubran los detalles que no coinciden. Es una conversación que revela cosas nuevas, incluso después de años juntos."},
+  {id:34, t:"Baile lento en la cocina", c:"Romántico", d:"Elijan una canción. Solo una. Báilenla como si fuera la última, sin bromas, sin público, sin apuro. Miren al otro a los ojos, respiren al mismo ritmo. La cocina, la sala o el balcón sirven. Al terminar, un beso o un abrazo largo. No hace falta más: una canción puede ser una cita completa."},
+  {id:35, t:"100 razones por las que te amo", c:"Romántico", d:"Cada uno escribe su lista. No tienen que llegar a cien solos, pero entre los dos sí. Anoten desde lo grande —su paciencia— hasta lo pequeño —cómo frunce el ceño—. Lean algunas en voz alta, salteadas. Guárdenlas para los días grises. Es un recordatorio tangible de todo lo que ven en el otro."},
+  {id:36, t:"Recrear su primera cita", c:"Romántico", d:"Vuelvan al lugar donde tuvieron su primera cita, o al más parecido. Pidan lo mismo, siéntense en el mismo lugar si se puede. Hablen de cómo se sentían esa vez: los nervios, la conversación, el primer beso. ¿Qué cambió? ¿Qué sigue igual? Un viaje en el tiempo de dos, sin salir de la ciudad."},
+  {id:37, t:"Helado y caminata", c:"Romántico", d:"Un helado cada uno (sabor distinto, para probar), una caminata sin destino fijo y una conversación sin tema obligado. Caminen por calles conocidas o nuevas, paren en una banca, miren a la gente pasar. No hay prisa. Al final, comenten cuál fue la mejor parte del paseo. Simple, barato y efectivo."},
+  {id:38, t:"Intercambiar roles por un día", c:"Romántico", d:"Cada uno hace las tareas del otro durante un día: si uno cocina, el otro cocina; si uno lava, el otro lava. Es la mejor forma de entender el día a día del otro. Al final, comenten qué fue lo más difícil y lo que más valoraron. Un ejercicio de empatía que cambia la perspectiva."},
+  {id:100, t:"Renovar promesas", c:"Romántico", d:"Escriban una carta sobre lo que quieren construir juntos de aquí en adelante: metas, sueños, formas de cuidarse. Léanlas en voz alta y guárdenlas como cierre del reto de los cien días. No es una boda, pero es un compromiso. Al final, un brindis y un abrazo largo. El siguiente capítulo empieza aquí."},
 
   /* --- SALIR --- */
-  {id:39, t:"Picnic en un parque", c:"Salir", d:"Cobija, algo rico y un parque. Si llueve, se hace en el piso de la sala con la ventana abierta."},
-  {id:40, t:"Ruta de comida callejera", c:"Salir", d:"Tres paradas, algo pequeño en cada una. Elijan el mejor bocado de la noche y vuelvan por él otro día."},
-  {id:41, t:"Museo gratuito", c:"Salir", d:"Busquen un museo con entrada libre y elijan cada uno su obra favorita. Expliquen por qué."},
-  {id:42, t:"Un barrio desconocido", c:"Salir", d:"Vayan a una zona de la ciudad donde nunca hayan caminado. Caminen sin mapa durante una hora."},
-  {id:43, t:"Cine en la tarde", c:"Salir", d:"Función de la tarde entre semana (si se puede). Cine vacío, palomitas grandes y peli random."},
-  {id:44, t:"Mercado local", c:"Salir", d:"Vayan al mercado más tradicional que encuentren. Compren una fruta que nunca hayan probado."},
-  {id:45, t:"Subir un cerro o mirador", c:"Salir", d:"Lleguen arriba y quédense hasta que se les pase el cansancio. La vista se disfruta más sin prisa."},
-  {id:46, t:"Feria de pulgas", c:"Salir", d:"Cada uno elige un objeto que le recuerde al otro por menos de $5. Se lo regalan al final."},
-  {id:47, t:"Tour de cafeterías", c:"Salir", d:"Tres cafeterías, un café en cada una. Califiquen: ambiente, sabor y charla. Coronen a la ganadora."},
-  {id:48, t:"Concierto o toque en vivo", c:"Salir", d:"Busquen música en vivo cerca, aunque no conozcan al artista. Descubrir juntos es doblemente bueno."},
-  {id:49, t:"Andar en bici", c:"Salir", d:"Ruta nueva, ritmo tranquilo, una parada para algo frío. Lo importante es el camino, no el destino."},
-  {id:50, t:"Playa, río o lago", c:"Salir", d:"El agua cerca de casa siempre es un plan. Lleven algo para comer y quédense hasta el atardecer."},
-  {id:51, t:"Elegir un libro para el otro", c:"Salir", d:"En una librería, cada uno elige un libro pensando en el otro. Después lo leen y lo comentan."},
-  {id:52, t:"Restaurante que nunca probaron", c:"Salir", d:"Elijan un lugar que siempre han visto pero nunca han entrado. Pidan algo que no conozcan."},
-  {id:90, t:"Visitar a familia o amigos", c:"Salir", d:"Vayan juntos a ver a alguien importante. Compartir su mundo con el otro también es un plan de pareja."},
-  {id:92, t:"Evento gratuito del barrio", c:"Salir", d:"Busquen actividades gratis en su ciudad: ferias, talleres, exposiciones. Vayan sin expectativas."},
-  {id:98, t:"Museo + café", c:"Salir", d:"Una exposición y luego una charla de café sobre lo que vieron. La mitad del plan es la conversación."},
+  {id:39, t:"Picnic en un parque", c:"Salir", d:"Cobija, algo rico, un parque y buen clima. Preparen sándwiches, fruta, algo para tomar y busquen una sombra. Si llueve, se hace en el piso de la sala con la ventana abierta. Lleven un libro o una baraja, pero no hace falta: la conversación es el plan. Al final, recojan todo y caminen un poco."},
+  {id:40, t:"Ruta de comida callejera", c:"Salir", d:"Elijan tres paradas de comida callejera: tacos, arepas, pizza, lo que haya. Pidan algo pequeño en cada una. Califiquen sabor, precio y ambiente. Elijan el mejor bocado de la noche y vuelvan por él otro día. Lleven servilletas y paciencia. La mejor comida muchas veces está en la esquina menos pensada."},
+  {id:41, t:"Museo gratuito", c:"Salir", d:"Busquen un museo con entrada libre: casi todas las ciudades tienen uno. Elijan cada uno su obra favorita y expliquen por qué. Tómense su tiempo, sin prisa. Al final, comenten qué los sorprendió o qué no les gustó. El arte es una excusa para conversar de otra cosa."},
+  {id:42, t:"Un barrio desconocido", c:"Salir", d:"Vayan a una zona de la ciudad donde nunca hayan caminado, que sea segura. Caminen sin mapa durante una hora, miren las casas, las tiendas, la gente. Paren en una cafetería o panadería local. Descubran algo nuevo. Al final, comenten qué les llamó la atención. La ciudad siempre tiene algo por mostrar."},
+  {id:43, t:"Cine en la tarde", c:"Salir", d:"Función de la tarde entre semana, si se puede. Cine vacío, palomitas grandes y una peli random: no importa cuál. Siéntense en las butacas del medio, compartan el brazo, ríanse de los tráilers. Al final, comenten la peli en la salida. Un clásico que nunca falla."},
+  {id:44, t:"Mercado local", c:"Salir", d:"Vayan al mercado más tradicional que encuentren. Compren una fruta que nunca hayan probado, un pan, algo rico. Hablen con los vendedores, pregunten de dónde viene. Caminen sin rumbo entre los puestos. Al final, coman lo que compraron en una banca. Un plan sensorial, barato y lleno de historias."},
+  {id:45, t:"Subir un cerro o mirador", c:"Salir", d:"Busquen un cerro, un mirador o un edificio con terraza. Suban con calma, lleven agua y algo para picar. Lleguen arriba y quédense hasta que se les pase el cansancio. Miren la ciudad desde arriba. Al final, bajen despacio y celebren con un helado o una bebida. El esfuerzo vale la pena."},
+  {id:46, t:"Feria de pulgas", c:"Salir", d:"Cada uno elige un objeto que le recuerde al otro por menos de lo que decidan. Puede ser un libro viejo, una taza, un disco, una figurita. Al final, se lo regalan. Expliquen por qué eligieron eso. Un regalo con historia y con precio bajo, pero con mucho significado."},
+  {id:47, t:"Tour de cafeterías", c:"Salir", d:"Tres cafeterías, un café en cada una. Califiquen ambiente, sabor, charla y precio. Tomen nota en el celular o en una servilleta. Al final, coronen a la ganadora y prometan volver. Si no toman café, pidan té o chocolate. Un plan tranquilo para una tarde sin apuro."},
+  {id:48, t:"Concierto o toque en vivo", c:"Salir", d:"Busquen música en vivo cerca: un bar, una plaza, un centro cultural. No hace falta que conozcan al artista: descubrir juntos es doblemente bueno. Lleven algo para tomar, siéntense cerca y déjense llevar. Al final, comenten qué les gustó. La música en vivo tiene una energía especial."},
+  {id:49, t:"Andar en bici", c:"Salir", d:"Ruta nueva, ritmo tranquilo, una parada para algo frío. Saquen las bicis o réntenlas. Elijan un camino que no conozcan, sin metas de distancia. Lo importante es el camino, no el destino. Al final, comenten qué vieron. Si no tienen bici, caminar también sirve."},
+  {id:50, t:"Playa, río o lago", c:"Salir", d:"El agua cerca de casa siempre es un plan. Lleven algo para comer, una cobija y protector solar. Quédense hasta el atardecer. Naden, caminen por la orilla, recojan conchitas. Al final, coman algo rico y vuelvan con la piel salada y el ánimo renovado. Un clásico que nunca falla."},
+  {id:51, t:"Elegir un libro para el otro", c:"Salir", d:"En una librería o una feria de libros, cada uno elige un libro pensando en el otro. No tiene que ser caro: puede ser usado. Expliquen por qué lo eligieron. Después, léanlo y comenten. Un regalo que se comparte en el tiempo, y una excusa para conversaciones nuevas."},
+  {id:52, t:"Restaurante que nunca probaron", c:"Salir", d:"Elijan un lugar que siempre han visto pero nunca han entrado: una fonda, un restaurante de otro país, una pizzería. Pidan algo que no conozcan. Prueben, comenten, califiquen. Al final, decidan si volverían. Salir de la zona de confort también es un plan."},
+  {id:90, t:"Visitar a familia o amigos", c:"Salir", d:"Vayan juntos a ver a alguien importante: un familiar, un amigo, alguien que extrañen. Compartir su mundo con el otro también es un plan de pareja. Lleven algo rico o simplemente la compañía. Al final, comenten qué les gustó de la visita. Los vínculos se construyen también con los demás."},
+  {id:92, t:"Evento gratuito del barrio", c:"Salir", d:"Busquen actividades gratis en su ciudad: ferias, talleres, exposiciones, conciertos en plazas. Vayan sin expectativas. Descubran algo nuevo juntos. Al final, comenten qué les gustó. La cultura es una excusa perfecta para salir de la rutina sin gastar casi nada."},
+  {id:98, t:"Museo + café", c:"Salir", d:"Una exposición, la que sea, y luego una charla de café sobre lo que vieron. Elijan cada uno su obra favorita y expliquen por qué. La mitad del plan es la conversación. Al final, comenten qué se llevan. Un plan culto, tranquilo y con café."},
 
   /* --- AVENTURA --- */
-  {id:53, t:"Acampar", c:"Aventura", d:"¿Sin tiempo para ir lejos? Armen la carpa en el patio o la terraza. Estrellas, cobijas y algo caliente."},
-  {id:54, t:"Senderismo nuevo", c:"Aventura", d:"Busquen un sendero cerca que nunca hayan hecho. Lleven agua, snacks y paciencia."},
-  {id:55, t:"Deporte o clase nueva", c:"Aventura", d:"Escalada, baile, boxeo, cerámica… algo que ninguno de los dos haya intentado. Reírse del ridículo es parte."},
-  {id:56, t:"Parque de diversiones", c:"Aventura", d:"Suban a todo lo que se atrevan. El que se asuste paga el próximo helado."},
-  {id:57, t:"Hacer algo que les dé miedo", c:"Aventura", d:"Hagan juntos una lista de 5 cosas que les den miedo o vergüenza. Elijan una y háganla hoy."},
-  {id:58, t:"Salir sin rumbo", c:"Aventura", d:"Salgan de casa y en cada esquina el otro decide: izquierda, derecha o derecho. Nada de mapas."},
-  {id:59, t:"Día con presupuesto mínimo", c:"Aventura", d:"Con el equivalente a un café cada uno, pasen el día entero. La creatividad es parte del plan."},
-  {id:60, t:"Pueblo cercano de un día", c:"Aventura", d:"Elijan un pueblo a un par de horas, vayan sin itinerario y vuelvan cuando se les antoje."},
-  {id:61, t:"La ciudad en bici", c:"Aventura", d:"Renta o saquen las bicis y crucen la ciudad por una ruta nueva. Paren en un lugar que nunca habían visto."},
-  {id:62, t:"Caminata nocturna", c:"Aventura", d:"Salgan a caminar cuando ya esté oscuro, por un lugar seguro y conocido. La ciudad se ve distinta."},
-  {id:63, t:"Probar algo nunca comido", c:"Aventura", d:"Vayan a un mercado y compren la fruta o el platillo más raro que encuentren. Lo prueban juntos."},
-  {id:64, t:"Día de «sí a todo»", c:"Aventura", d:"Durante un día, cada propuesta del otro se acepta (dentro de lo razonable y seguro). Empieza la aventura."},
-  {id:93, t:"Ejercicio juntos", c:"Aventura", d:"Una rutina, un trote o una clase en YouTube. Sudar juntos libera endorfinas y buen humor."},
+  {id:53, t:"Acampar", c:"Aventura", d:"¿Sin tiempo para ir lejos? Armen la carpa en el patio o la terraza. Estrellas, cobijas y algo caliente. Si no tienen carpa, usen sábanas y sillas. Cocinen algo simple: malvaviscos, sándwiches. Cuenten historias, miren el cielo. Al final, duerman adentro o afuera, pero con la misma emoción de un campamento."},
+  {id:54, t:"Senderismo nuevo", c:"Aventura", d:"Busquen un sendero cerca que nunca hayan hecho. Lleven agua, snacks y paciencia. Caminen sin prisa, miren el paisaje, paren cuando quieran. Al final, lleguen a un mirador o a una cascada. Coman algo rico. El cansancio se siente como logro. Un plan que combina ejercicio y naturaleza."},
+  {id:55, t:"Deporte o clase nueva", c:"Aventura", d:"Escalada, baile, boxeo, cerámica, lo que sea: algo que ninguno de los dos haya intentado. Reírse del ridículo es parte. Al final, comenten qué les gustó y qué no. Un plan que rompe la rutina y crea anécdotas para contar."},
+  {id:56, t:"Parque de diversiones", c:"Aventura", d:"Suban a todo lo que se atrevan: montañas rusas, carruseles, juegos de agua. El que se asuste paga el próximo helado. Coman algodón de azúcar, tomen fotos ridículas. Al final, comenten cuál fue el mejor juego. Un día de niño grande, sin culpa."},
+  {id:57, t:"Hacer algo que les dé miedo", c:"Aventura", d:"Hagan juntos una lista de cinco cosas que les den miedo o vergüenza: hablar en público, cantar, probar un alimento raro. Elijan una y háganla hoy. El apoyo mutuo es la clave. Al final, comenten cómo se sintieron. Una forma de crecer como pareja y de demostrarse confianza."},
+  {id:58, t:"Salir sin rumbo", c:"Aventura", d:"Salgan de casa y en cada esquina el otro decide: izquierda, derecha o derecho. Nada de mapas. Caminen durante una hora, descubran calles nuevas, paren donde les llame la atención. Al final, comenten qué les sorprendió. La ciudad se ve distinta cuando no hay destino."},
+  {id:59, t:"Día con presupuesto mínimo", c:"Aventura", d:"Con el equivalente a un café cada uno, pasen el día entero. La creatividad es parte del plan: caminar, mirar vitrinas, ir a una plaza, leer en una biblioteca. Al final, comenten qué fue lo mejor del día. Un experimento de minimalismo y complicidad."},
+  {id:60, t:"Pueblo cercano de un día", c:"Aventura", d:"Elijan un pueblo a un par de horas, vayan sin itinerario. Caminen por sus calles, coman en una fonda, compren algo en el mercado. Vuelvan cuando se les antoje. Al final, comenten qué les gustó. Un viaje pequeño que se siente grande."},
+  {id:61, t:"La ciudad en bici", c:"Aventura", d:"Renta o saquen las bicis y crucen la ciudad por una ruta nueva. Paren en un lugar que nunca habían visto: una plaza, un parque, una cafetería. Tomen fotos. Al final, comenten qué descubrieron. La ciudad se recorre distinto en dos ruedas."},
+  {id:62, t:"Caminata nocturna", c:"Aventura", d:"Salgan a caminar cuando ya esté oscuro, por un lugar seguro y conocido. La ciudad se ve distinta de noche: luces, ruidos, silencios. Caminen de la mano, sin apuro. Al final, comenten qué sintieron. Un plan simple con un toque de misterio."},
+  {id:63, t:"Probar algo nunca comido", c:"Aventura", d:"Vayan a un mercado y compren la fruta o el platillo más raro que encuentren. Pregunten cómo se come, de dónde viene. Pruébenlo juntos. Al final, califiquen del uno al diez. Un plan para paladares aventureros y para ampliar el repertorio de comidas compartidas."},
+  {id:64, t:"Día de «sí a todo»", c:"Aventura", d:"Durante un día, cada propuesta del otro se acepta, dentro de lo razonable y seguro. Empieza la aventura: un lugar, una comida, una actividad. Al final, comenten qué fue lo mejor. Un ejercicio de confianza y espontaneidad que puede revelar gustos nuevos."},
+  {id:93, t:"Ejercicio juntos", c:"Aventura", d:"Una rutina, un trote o una clase en YouTube. Sudar juntos libera endorfinas y buen humor. Al final, estiren y tomen agua. Comenten qué ejercicio les gustó más. Un plan que cuida el cuerpo y el vínculo, y que puede volverse costumbre."},
 
   /* --- CREATIVO --- */
-  {id:65, t:"Pintar un cuadro juntos", c:"Creativo", d:"Un lienzo, dos pinceles. Pueden turnarse o pintar a la vez. El resultado se cuelga en la casa."},
-  {id:66, t:"Cápsula del tiempo", c:"Creativo", d:"Una caja con cartas, fotos y objetos. Sellen con fecha de apertura: un año, cinco años."},
-  {id:67, t:"Escribir una canción o poema", c:"Creativo", d:"Puede ser malísimo, no importa. La meta es terminar algo juntos y cantarlo o leerlo en voz alta."},
-  {id:68, t:"Álbum de fotos físico", c:"Creativo", d:"Impriman sus fotos favoritas y armen un álbum a mano. Escriban una nota al lado de cada una."},
-  {id:69, t:"Esculturas con plastilina", c:"Creativo", d:"Cada uno esculpe al otro… sin mirar. Diez minutos, máximo esfuerzo, cero filtro."},
-  {id:70, t:"Video «un día en nuestra vida»", c:"Creativo", d:"Graben momentos del día y edítenlos. Será su recuerdo favorito en unos años."},
-  {id:71, t:"DIY para decorar la casa", c:"Creativo", d:"Elijan un rincón y transformen algo: una repisa, un cuadro, una lámpara. Un proyecto de dos."},
-  {id:72, t:"Lista de sueños juntos", c:"Creativo", d:"Escriban 30 cosas que quieran hacer juntos (grandes y pequeñas). Marquen la primera que harán."},
-  {id:73, t:"Mapa de lugares importantes", c:"Creativo", d:"Dibujen un mapa con los lugares que marcaron su historia: donde se conocieron, la primera cita, el primer viaje."},
-  {id:74, t:"Inventar un juego de mesa", c:"Creativo", d:"Reglas propias, cartón y dados. Juéguenlo al menos una vez. Si es divertido, se queda en casa."},
-  {id:75, t:"Origami o manualidades", c:"Creativo", d:"Sigan un tutorial de papiroflexia. El reto es que el resultado se parezca a lo que dice el video."},
-  {id:76, t:"Escribir un cuento entre los dos", c:"Creativo", d:"Uno escribe una frase, el otro continúa. Alternen hasta terminar la historia. Léanla después."},
-  {id:91, t:"Clase de cerámica", c:"Creativo", d:"Manos sucias, risas y una taza torcida que será su favorita para siempre."},
+  {id:65, t:"Pintar un cuadro juntos", c:"Creativo", d:"Un lienzo, dos pinceles, acrílicos o témperas. Pueden turnarse o pintar a la vez. El resultado se cuelga en la casa. Al final, coméntenlo: qué quisieron expresar, qué salió distinto. El arte no tiene reglas cuando se hace en pareja, y cada cuadro guarda una historia."},
+  {id:66, t:"Cápsula del tiempo", c:"Creativo", d:"Una caja con cartas, fotos y objetos pequeños. Escriban una carta al futuro, guarden algo que los represente. Sellen con fecha de apertura: un año, cinco años. Al final, guárdenla en un lugar seguro. Un regalo para el futuro, hecho hoy."},
+  {id:67, t:"Escribir una canción o poema", c:"Creativo", d:"Puede ser malísimo, no importa. La meta es terminar algo juntos y cantarlo o leerlo en voz alta. Elijan un tema: el amor, una anécdota, un lugar. Al final, guárdenlo. Un recuerdo que se puede volver a leer o cantar cuando quieran."},
+  {id:68, t:"Álbum de fotos físico", c:"Creativo", d:"Impriman sus fotos favoritas y armen un álbum a mano. Escriban una nota al lado de cada una: fecha, lugar, anécdota. Al final, hojeenlo juntos. Un objeto tangible que dura más que un carrete digital y que se puede compartir con otros."},
+  {id:69, t:"Esculturas con plastilina", c:"Creativo", d:"Cada uno esculpe al otro… sin mirar. Diez minutos, máximo esfuerzo, cero filtro. Al final, comparen las esculturas y ríanse. Un plan tonto que se vuelve inolvidable y que muestra cómo se ven de verdad el uno al otro."},
+  {id:70, t:"Video «un día en nuestra vida»", c:"Creativo", d:"Graben momentos del día: el desayuno, una caminata, una risa. Edítenlos con una app sencilla. Al final, véanlo juntos. Será su recuerdo favorito en unos años y una cápsula de cómo eran ahora."},
+  {id:71, t:"DIY para decorar la casa", c:"Creativo", d:"Elijan un rincón y transformen algo: una repisa, un cuadro, una lámpara. Compren lo necesario, pónganse manos a la obra. Al final, admiren el resultado. Un proyecto de dos que deja huella en el hogar y una historia para contar."},
+  {id:72, t:"Lista de sueños juntos", c:"Creativo", d:"Escriban treinta cosas que quieran hacer juntos: grandes y pequeñas. Marquen la primera que harán. Al final, péguenla en un lugar visible. Un mapa de sueños compartido, para no olvidar hacia dónde van."},
+  {id:73, t:"Mapa de lugares importantes", c:"Creativo", d:"Dibujen un mapa con los lugares que marcaron su historia: donde se conocieron, la primera cita, el primer viaje. Anoten anécdotas al lado. Al final, cuélguenlo. Un mapa del amor, hecho a mano, que resume su historia en un papel."},
+  {id:74, t:"Inventar un juego de mesa", c:"Creativo", d:"Reglas propias, cartón y dados. Inventen un juego sencillo: de preguntas, de retos, de memoria. Juéguenlo al menos una vez. Si es divertido, se queda en casa. Un plan creativo, original y que puede volverse tradición."},
+  {id:75, t:"Origami o manualidades", c:"Creativo", d:"Sigan un tutorial de papiroflexia o de manualidades. El reto es que el resultado se parezca a lo que dice el video. Al final, comparen sus figuras y ríanse. Un plan tranquilo, entretenido y que entrena la paciencia."},
+  {id:76, t:"Escribir un cuento entre los dos", c:"Creativo", d:"Uno escribe una frase, el otro continúa. Alternen hasta terminar la historia. Puede ser absurda, romántica, de terror. Al final, léanla en voz alta. Un cuento único, hecho entre los dos, que no existe en ningún otro lugar."},
+  {id:91, t:"Clase de cerámica", c:"Creativo", d:"Manos sucias, risas y una taza torcida que será su favorita para siempre. Busquen un taller cerca. Al final, admiren sus creaciones. Un plan que se lleva a casa y que recuerda el día en que se animaron a intentarlo."},
 
   /* --- RELAX --- */
-  {id:77, t:"Yoga o meditación en pareja", c:"Relax", d:"Un video de yoga para dos o diez minutos de respiración juntos. Después se sienten de otra manera."},
-  {id:78, t:"Tarde de lectura en silencio", c:"Relax", d:"Cada uno con su libro, en el mismo espacio. Estar juntos sin hablar también es intimidad."},
-  {id:79, t:"Baño de tina con velas", c:"Relax", d:"Agua caliente, sales, velas y música suave. Si no hay tina, un buen baño con aromas funciona igual."},
-  {id:80, t:"Masaje con aceites", c:"Relax", d:"Aceite tibio, música tranquila y turnos de 25 minutos. Sin celulares, sin reloj de por medio."},
-  {id:81, t:"Noche de té y charla", c:"Relax", d:"Dos tés, la luz baja y una conversación sin urgencias. Hablen de lo que no hablan normalmente."},
-  {id:82, t:"Atardecer en silencio", c:"Relax", d:"Busquen un lugar para ver el atardecer y guárdenlo juntos, sin hablar. Solo mirar."},
-  {id:83, t:"Siesta juntos sin culpa", c:"Relax", d:"Un domingo, una cobija y cero pendientes. Dormir la siesta abrazados es un plan legítimo."},
-  {id:84, t:"Caminata lenta en la naturaleza", c:"Relax", d:"Un parque, un bosque, un río. Caminen despacio, respiren hondo y no se pongan metas de distancia."},
-  {id:85, t:"Desintoxicación digital 24h", c:"Relax", d:"Un día completo sin redes sociales. Avísenle a quien tengan que avisarle y dedíquense al mundo real."},
-  {id:86, t:"Estiramiento y respiración", c:"Relax", d:"Quince minutos de estiramiento guiado y quince de respiración profunda. Terminen con un abrazo largo."},
-  {id:87, t:"Música suave y charla", c:"Relax", d:"Una playlist tranquila y preguntas sencillas: ¿cómo estás de verdad? ¿qué te tiene pensando esta semana?"},
-  {id:88, t:"Día de no hacer nada", c:"Relax", d:"El plan es no tener plan. Despierten sin alarma, decidan sobre la marcha y disfruten el vacío."}
+  {id:77, t:"Yoga o meditación en pareja", c:"Relax", d:"Un video de yoga para dos o diez minutos de respiración juntos. Después se sienten de otra manera. Al final, comenten cómo se sintieron. Un plan que calma, conecta y que pueden repetir cuando lo necesiten."},
+  {id:78, t:"Tarde de lectura en silencio", c:"Relax", d:"Cada uno con su libro, en el mismo espacio. Estar juntos sin hablar también es intimidad. Al final, comenten qué leyeron. Un plan simple que nutre y que no requiere planes elaborados."},
+  {id:79, t:"Baño de tina con velas", c:"Relax", d:"Agua caliente, sales, velas y música suave. Si no hay tina, un buen baño con aromas funciona igual. Al final, quédense un rato en silencio. Un plan de spa sin salir de casa y sin gastar de más."},
+  {id:80, t:"Masaje con aceites", c:"Relax", d:"Aceite tibio, música tranquila y turnos de veinticinco minutos. Sin celulares, sin reloj de por medio. Al final, un té caliente. Un plan que relaja, conecta y que se puede convertir en costumbre."},
+  {id:81, t:"Noche de té y charla", c:"Relax", d:"Dos tés, la luz baja y una conversación sin urgencias. Hablen de lo que no hablan normalmente: miedos, sueños, anécdotas. Al final, un abrazo. Un plan simple y profundo que fortalece la complicidad."},
+  {id:82, t:"Atardecer en silencio", c:"Relax", d:"Busquen un lugar para ver el atardecer y guárdenlo juntos, sin hablar. Solo mirar. Al final, comenten qué sintieron. Un plan visual y emocional que no cuesta nada y se recuerda."},
+  {id:83, t:"Siesta juntos sin culpa", c:"Relax", d:"Un domingo, una cobija y cero pendientes. Dormir la siesta abrazados es un plan legítimo. Al final, despierten despacio. Un plan que recarga y que a veces es el mejor regalo."},
+  {id:84, t:"Caminata lenta en la naturaleza", c:"Relax", d:"Un parque, un bosque, un río. Caminen despacio, respiren hondo y no se pongan metas de distancia. Al final, siéntense en una banca. Un plan que calma la mente y acerca a la naturaleza."},
+  {id:85, t:"Desintoxicación digital 24h", c:"Relax", d:"Un día completo sin redes sociales. Avísenle a quien tengan que avisarle y dedíquense al mundo real. Al final, comenten cómo se sintieron. Un experimento que vale la pena y que puede cambiar hábitos."},
+  {id:86, t:"Estiramiento y respiración", c:"Relax", d:"Quince minutos de estiramiento guiado y quince de respiración profunda. Terminen con un abrazo largo. Un plan rápido que cambia el día y que se puede hacer en cualquier momento."},
+  {id:87, t:"Música suave y charla", c:"Relax", d:"Una playlist tranquila y preguntas sencillas: ¿cómo estás de verdad? ¿qué te tiene pensando esta semana? Al final, escúchense. Un plan simple y profundo que a veces es lo que más se necesita."},
+  {id:88, t:"Día de no hacer nada", c:"Relax", d:"El plan es no tener plan. Despierten sin alarma, decidan sobre la marcha y disfruten el vacío. Al final, comenten qué hicieron. Un plan que también es un plan, y a veces el mejor de todos."}
 ];
 
 /* =========================================================
    ESTADO (localStorage — solo en este dispositivo)
    ========================================================= */
-const STORAGE_KEY = 'cien-dias-contigo-v1';
+const STORAGE_KEY = 'que-hacemos-hoy-v1';
 let state = loadState();
 
 function defaultState(){
@@ -611,7 +642,7 @@ function todayStr(){
 /* =========================================================
    FOTOS (IndexedDB — solo en este dispositivo)
    ========================================================= */
-const DB_NAME = 'cien-dias-contigo';
+const DB_NAME = 'que-hacemos-hoy';
 const STORE = 'photos';
 let dbPromise = null;
 
@@ -712,40 +743,74 @@ function toast(msg){
   el.textContent = msg;
   el.classList.add('show');
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => el.classList.remove('show'), 2400);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 2800);
 }
 
-function compressImage(file, maxSize = 1400, quality = 0.82){
-  return new Promise((resolve, reject)=>{
-    const img = new Image();
-    const objURL = URL.createObjectURL(file);
-    img.onload = () => {
-      URL.revokeObjectURL(objURL);
-      let { width, height } = img;
-      const scale = Math.min(1, maxSize / Math.max(width, height));
-      width = Math.round(width * scale);
-      height = Math.round(height * scale);
-      const canvas = document.createElement('canvas');
-      canvas.width = width;
-      canvas.height = height;
-      const ctx = canvas.getContext('2d');
-      ctx.drawImage(img, 0, 0, width, height);
-      canvas.toBlob(b => b ? resolve(b) : reject(new Error('toBlob falló')), 'image/jpeg', quality);
-    };
-    img.onerror = () => { URL.revokeObjectURL(objURL); reject(new Error('No se pudo leer la imagen')); };
-    img.src = objURL;
+/* =========================================================
+   COMPRESIÓN DE IMAGEN COMPATIBLE CON iOS
+   - FileReader en lugar de createObjectURL (más estable en iOS)
+   - toBlob con fallback a toDataURL (iOS a veces falla toBlob)
+   - Fondo blanco para evitar problemas con PNG/HEIC
+   - Tamaño reducido para no agotar memoria en iOS
+   ========================================================= */
+function fileToDataURL(file){
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = () => reject(reader.error || new Error('Error leyendo archivo'));
+    reader.readAsDataURL(file);
   });
 }
-function blobToDataURL(blob){
-  return new Promise((resolve, reject)=>{
-    const r = new FileReader();
-    r.onload = () => resolve(r.result);
-    r.onerror = () => reject(r.error);
-    r.readAsDataURL(blob);
+function loadImage(src){
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = () => reject(new Error('Formato de imagen no soportado'));
+    img.src = src;
   });
 }
 function dataURLToBlob(dataURL){
-  return fetch(dataURL).then(r => r.blob());
+  const parts = dataURL.split(',');
+  const mimeMatch = parts[0].match(/:(.*?);/);
+  const mime = mimeMatch ? mimeMatch[1] : 'image/jpeg';
+  const bstr = atob(parts[1]);
+  let n = bstr.length;
+  const u8arr = new Uint8Array(n);
+  while(n--){ u8arr[n] = bstr.charCodeAt(n); }
+  return new Blob([u8arr], { type: mime });
+}
+function canvasToBlobSafe(canvas, quality){
+  return new Promise((resolve, reject) => {
+    try {
+      if (canvas.toBlob) {
+        canvas.toBlob((blob) => {
+          if (blob) return resolve(blob);
+          try {
+            resolve(dataURLToBlob(canvas.toDataURL('image/jpeg', quality)));
+          } catch(err){ reject(err); }
+        }, 'image/jpeg', quality);
+      } else {
+        resolve(dataURLToBlob(canvas.toDataURL('image/jpeg', quality)));
+      }
+    } catch(err){ reject(err); }
+  });
+}
+async function compressImage(file, maxSize = 1200, quality = 0.8){
+  const dataURL = await fileToDataURL(file);
+  const img = await loadImage(dataURL);
+  let { width, height } = img;
+  if (!width || !height) throw new Error('Imagen sin dimensiones');
+  const scale = Math.min(1, maxSize / Math.max(width, height));
+  width = Math.max(1, Math.round(width * scale));
+  height = Math.max(1, Math.round(height * scale));
+  const canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = height;
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = '#FFFFFF';
+  ctx.fillRect(0, 0, width, height);
+  ctx.drawImage(img, 0, 0, width, height);
+  return await canvasToBlobSafe(canvas, quality);
 }
 function getImageDims(src){
   return new Promise((resolve, reject)=>{
@@ -753,51 +818,6 @@ function getImageDims(src){
     img.onload = () => resolve({ w: img.naturalWidth || 1, h: img.naturalHeight || 1 });
     img.onerror = () => reject(new Error('dims'));
     img.src = src;
-  });
-}
-
-/* =========================================================
-   TAB LISTA
-   ========================================================= */
-const CATEGORIES = ['Todas', 'En casa', 'Cocina', 'Romántico', 'Salir', 'Aventura', 'Creativo', 'Relax'];
-let activeFilter = 'Todas';
-
-function renderFilters(){
-  const el = $('#filters');
-  el.innerHTML = CATEGORIES.map(c =>
-    `<button data-cat="${esc(c)}" class="${c === activeFilter ? 'active' : ''}">${esc(c)}</button>`
-  ).join('');
-  el.querySelectorAll('button').forEach(b => {
-    b.addEventListener('click', () => {
-      activeFilter = b.dataset.cat;
-      renderFilters();
-      renderList();
-    });
-  });
-}
-
-function renderList(){
-  const grid = $('#listGrid');
-  const items = ACTIVITIES.filter(a => activeFilter === 'Todas' || a.c === activeFilter);
-
-  $('#listEmpty').hidden = items.length > 0;
-  grid.innerHTML = items.map(a => {
-    const isDone = !!state.done[a.id];
-    const hasNote = !!(state.notes[a.id] || '').trim();
-    return `
-      <button class="act ${isDone ? 'done' : ''}" data-id="${a.id}">
-        <div class="act-top">
-          <span class="act-cat">${esc(a.c)}</span>
-          ${isDone ? '<span class="tick">✓</span>' : ''}
-        </div>
-        <span class="act-title">${esc(a.t)}</span>
-        <span class="act-desc">${esc(a.d.length > 78 ? a.d.slice(0, 78) + '…' : a.d)}</span>
-        ${hasNote ? '<span class="note-dot">📝</span>' : ''}
-      </button>`;
-  }).join('');
-
-  grid.querySelectorAll('.act').forEach(btn => {
-    btn.addEventListener('click', () => openActivity(Number(btn.dataset.id)));
   });
 }
 
@@ -837,8 +857,8 @@ function rollAnimation(pool, choice, onDone){
   overlay.hidden = false;
 
   const start = performance.now();
-  const SPIN = 1500;   // giro rápido
-  const SLOW = 800;    // frenado
+  const SPIN = 1500;
+  const SLOW = 800;
   let last = 0;
 
   function step(){
@@ -854,7 +874,7 @@ function rollAnimation(pool, choice, onDone){
       requestAnimationFrame(step);
     } else if(t < SPIN + SLOW){
       const p = (t - SPIN) / SLOW;
-      const interval = 60 + 380 * p * p; // 60 → 440 ms
+      const interval = 60 + 380 * p * p;
       if(t - last > interval){
         last = t;
         const r = pool[Math.floor(Math.random()*pool.length)];
@@ -875,11 +895,9 @@ function rollAnimation(pool, choice, onDone){
 /* =========================================================
    MODAL DE ACTIVIDAD
    ========================================================= */
-let currentId = null;
 let noteSaveTimer = null;
 
 async function openActivity(id){
-  currentId = id;
   const a = byId(id);
   if(!a) return;
 
@@ -903,8 +921,10 @@ async function openActivity(id){
       <div class="block">
         <h3>Fotos <span class="count" id="photoCount">0</span></h3>
         <div class="photo-grid" id="photoGrid"></div>
-        <input type="file" id="photoInput" accept="image/*" multiple hidden>
-        <button class="btn btn-ghost btn-sm" id="addPhotoBtn">📷 Agregar fotos</button>
+        <label class="photo-label btn btn-ghost btn-sm">
+          📷 Agregar fotos
+          <input type="file" id="photoInput" accept="image/*" multiple>
+        </label>
       </div>
 
       <div class="pdf-block">
@@ -930,7 +950,6 @@ async function openActivity(id){
       saveState();
       $('#noteStatus').textContent = 'Guardado en este dispositivo ✓';
       $('#noteStatus').classList.add('saved');
-      renderList();
     }, 450);
   });
 
@@ -939,21 +958,35 @@ async function openActivity(id){
     openActivity(id);
   });
 
-  $('#addPhotoBtn').addEventListener('click', () => $('#photoInput').click());
+  // Input file: el label dispara el picker de forma nativa (más fiable en iOS)
   $('#photoInput').addEventListener('change', async (e) => {
     const files = Array.from(e.target.files || []);
+    const inputEl = e.target;
+    inputEl.value = '';
     if(!files.length) return;
+
     toast('Procesando fotos…');
+    let ok = 0, fail = 0;
     for(const f of files){
-      if(!f.type.startsWith('image/')) continue;
       try{
         const blob = await compressImage(f);
         await addPhoto(id, blob);
-      }catch(err){ console.warn(err); }
+        ok++;
+      }catch(err){
+        console.warn('Foto no procesada:', f.name, err);
+        fail++;
+      }
     }
-    e.target.value = '';
+
     await renderModalPhotos(id);
-    toast('Fotos guardadas en este dispositivo 💞');
+
+    if(ok > 0 && fail === 0){
+      toast(`✓ ${ok} foto${ok>1?'s':''} guardada${ok>1?'s':''}`);
+    } else if(ok > 0 && fail > 0){
+      toast(`${ok} guardada${ok>1?'s':''}, ${fail} no se pudo${fail>1?'ieron':''} procesar`);
+    } else {
+      toast('No se pudieron procesar las fotos. Prueba con JPG o PNG.');
+    }
   });
 
   $('#pdfBtn').addEventListener('click', async () => {
@@ -1004,7 +1037,6 @@ async function renderModalPhotos(activityId){
 function closeModal(){
   $('#modal').hidden = true;
   document.body.style.overflow = '';
-  currentId = null;
 }
 
 /* =========================================================
@@ -1019,7 +1051,6 @@ function toggleDone(id){
     toast('¡Una más! 🎉');
   }
   saveState();
-  renderList();
   renderStats();
 }
 
@@ -1027,9 +1058,7 @@ function toggleDone(id){
    PDF (generado 100% en el navegador, sin servidores)
    ========================================================= */
 async function generatePDF(activityId){
-  if(!window.jspdf || !window.jspdf.jsPDF){
-    throw new Error('jsPDF no disponible');
-  }
+  if(!window.jspdf || !window.jspdf.jsPDF) throw new Error('jsPDF no disponible');
   const a = byId(activityId);
   if(!a) throw new Error('Actividad no encontrada');
 
@@ -1050,7 +1079,7 @@ async function generatePDF(activityId){
   doc.setTextColor(255, 255, 255);
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(10.5);
-  doc.text('100 DÍAS CONTIGO', margin, 16);
+  doc.text('¿QUÉ HACEMOS HOY?', margin, 16);
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(9);
   doc.text('Un recuerdo para dos', margin, 22);
@@ -1058,7 +1087,7 @@ async function generatePDF(activityId){
   const dateStr = new Date().toLocaleDateString('es-ES', { day:'2-digit', month:'long', year:'numeric' });
   doc.text(dateStr, pageW - margin, 16, { align:'right' });
 
-  /* Etiqueta de actividad */
+  /* Etiqueta */
   let y = 58;
   doc.setTextColor(199, 91, 107);
   doc.setFont('helvetica', 'bold');
@@ -1086,6 +1115,12 @@ async function generatePDF(activityId){
   doc.setLineWidth(0.6);
   doc.line(margin, y, pageW - margin, y);
   y += 12;
+
+  /* Si queda poco espacio, nueva página para notas */
+  if(y > pageH - 90){
+    doc.addPage();
+    y = 26;
+  }
 
   /* Notas */
   doc.setTextColor(199, 91, 107);
@@ -1134,7 +1169,7 @@ async function generatePDF(activityId){
         col = 0;
       }
       const x = margin + col * (cellW + gap);
-      const dataURL = await blobToDataURL(p.blob);
+      const dataURL = await fileToDataURL(p.blob);
       let dims = { w: 1, h: 1 };
       try { dims = await getImageDims(dataURL); } catch(e){}
       const scale = Math.min(cellW / dims.w, cellH / dims.h);
@@ -1162,7 +1197,7 @@ async function generatePDF(activityId){
     doc.setFontSize(8);
     doc.setTextColor(150, 140, 130);
     doc.text(
-      'Este recuerdo se generó en tu dispositivo. 100 días contigo no guarda nada en servidores.',
+      'Este recuerdo se generó en tu dispositivo. ¿Qué hacemos hoy? no guarda nada en servidores.',
       margin, pageH - 12
     );
     doc.text(`${i} / ${total}`, pageW - margin, pageH - 12, { align:'right' });
@@ -1174,7 +1209,7 @@ async function generatePDF(activityId){
     .replace(/^-|-$/g, '')
     .slice(0, 40) || 'recuerdo';
 
-  doc.save(`100-dias-contigo-${String(a.id).padStart(3, '0')}-${safeTitle}.pdf`);
+  doc.save(`que-hacemos-hoy-${String(a.id).padStart(3, '0')}-${safeTitle}.pdf`);
 }
 
 /* =========================================================
@@ -1191,10 +1226,10 @@ async function renderRecuerdos(){
     box.innerHTML = `
       <div class="empty">
         <span class="emoji">📸</span>
-        <p>Aún no hay recuerdos guardados.<br>Elige una actividad, escríbele algo, sube fotos y descarga su PDF.</p>
-        <button class="btn btn-primary" id="goList" style="margin:0 auto">Ir a Las 100</button>
+        <p>Aún no hay recuerdos guardados.<br>Presiona <b>Sorpréndenos</b>, escribe algo, sube fotos y descarga su PDF.</p>
+        <button class="btn btn-primary" id="goHome" style="margin:0 auto">Ir a Inicio</button>
       </div>`;
-    $('#goList').addEventListener('click', () => switchTab('lista'));
+    $('#goHome').addEventListener('click', () => switchTab('inicio'));
     return;
   }
 
@@ -1224,9 +1259,12 @@ async function renderRecuerdos(){
     return `
       <div class="rec-group">
         <div class="rec-head">
-          <h3>${esc(a.t)}</h3>
+          <h3 data-open="${id}">${esc(a.t)}</h3>
           <span>${ps.length ? ps.length + ' foto' + (ps.length>1?'s':'') : ''}${note ? (ps.length ? ' · ' : '') + 'nota' : ''}</span>
-          <button class="btn btn-ghost btn-sm rec-pdf" data-pdf="${id}">📄 PDF</button>
+          <div class="rec-actions">
+            <button class="btn btn-ghost btn-sm" data-open-btn="${id}">Abrir</button>
+            <button class="btn btn-ghost btn-sm" data-pdf="${id}">📄 PDF</button>
+          </div>
         </div>
         ${ps.length ? `<div class="rec-photos">${ps.map(p=>`
           <div class="rec-photo"><img src="${photoURL(p)}" alt="${esc(a.t)}" loading="lazy"></div>`).join('')}</div>` : ''}
@@ -1234,6 +1272,12 @@ async function renderRecuerdos(){
       </div>`;
   }).join('');
 
+  box.querySelectorAll('[data-open]').forEach(el => {
+    el.addEventListener('click', () => openActivity(Number(el.dataset.open)));
+  });
+  box.querySelectorAll('[data-open-btn]').forEach(btn => {
+    btn.addEventListener('click', () => openActivity(Number(btn.dataset.openBtn)));
+  });
   box.querySelectorAll('[data-pdf]').forEach(btn => {
     btn.addEventListener('click', async () => {
       const id = Number(btn.dataset.pdf);
@@ -1269,7 +1313,7 @@ async function exportData(){
     toast('Preparando respaldo…');
     const photos = await allPhotos();
     const payload = {
-      app: '100-dias-contigo',
+      app: 'que-hacemos-hoy',
       version: 1,
       exportedAt: new Date().toISOString(),
       state: {
@@ -1281,14 +1325,14 @@ async function exportData(){
       photos: await Promise.all(photos.map(async p => ({
         activityId: p.activityId,
         createdAt: p.createdAt,
-        data: await blobToDataURL(p.blob)
+        data: await fileToDataURL(p.blob)
       })))
     };
     const blob = new Blob([JSON.stringify(payload)], { type:'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `100-dias-contigo-${todayStr()}.json`;
+    a.download = `que-hacemos-hoy-${todayStr()}.json`;
     document.body.appendChild(a);
     a.click();
     a.remove();
@@ -1320,13 +1364,12 @@ async function importData(file){
       for(const p of payload.photos){
         if(!p.data) continue;
         try{
-          const blob = await dataURLToBlob(p.data);
+          const blob = dataURLToBlob(p.data);
           await addPhoto(p.activityId, blob);
         }catch(e){ console.warn('Foto no importada', e); }
       }
     }
 
-    renderList();
     renderRecuerdos();
     renderStats();
     toast('Respaldo restaurado ✓');
@@ -1346,10 +1389,9 @@ async function resetAll(){
   urlCache.forEach(u => URL.revokeObjectURL(u));
   urlCache.clear();
 
-  renderList();
   renderRecuerdos();
   renderStats();
-  switchTab('lista');
+  switchTab('inicio');
   toast('Todo borrado');
 }
 
@@ -1368,8 +1410,6 @@ function switchTab(name){
    INICIALIZACIÓN
    ========================================================= */
 function init(){
-  renderFilters();
-  renderList();
   renderStats();
 
   $$('#tabs button').forEach(b => {
